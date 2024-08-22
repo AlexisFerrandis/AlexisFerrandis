@@ -1,0 +1,81 @@
+@use "../abstracts/" as *;
+
+.footer {
+    position: relative;
+    background-color: $footer-background-color;
+    color: $footer-text-color;
+    font-family: $footer-link-font-family;
+    text-decoration: $footer-link-text-decoration;
+    margin-top: 60px;
+    &__top {
+        display: flex;
+        font-size: $font-size-400;
+        text-align: center;
+        margin-bottom: 92px;
+        &--image {
+            width: 47%;
+            object-fit: cover;
+            @include tablet-breakpoint {
+                display: none;
+            }
+        }
+        &--content {
+            width: 53%;
+            line-height: 1.5;
+            @include tablet-breakpoint {
+                width: 100%;
+                font-size: $font-size-300;
+            }
+            @include mobile-breakpoint {
+                font-size: $font-size-200;
+            }
+            img {
+                width: 50%;
+                max-width: 360px;
+                min-width: 190px;
+                margin: 20px 0;
+                @include tablet-breakpoint {
+                    max-width: 260px;
+                }
+            }
+        }
+    }
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 32px;
+        @include tablet-breakpoint {
+            flex-direction: column;
+        }
+        &--left {
+            @include tablet-breakpoint {
+                display: none;
+            }
+            img {
+                width: 72px;
+                height: 72px;
+            }
+        }
+        &--center {
+            @include tablet-breakpoint {
+                margin-bottom: 32px;
+            }
+            span {
+                text-decoration: underline;
+            }
+        }
+        &--right {
+            img {
+                width: 24px;
+                height: 24px;
+                filter: brightness(0) saturate(100%) invert(5%) sepia(94%) saturate(6652%) hue-rotate(216deg) brightness(91%) contrast(101%);
+                margin-left: 30px;
+                @include tablet-breakpoint {
+                    margin: 0 16px;
+                }
+            }
+        }
+    }
+}

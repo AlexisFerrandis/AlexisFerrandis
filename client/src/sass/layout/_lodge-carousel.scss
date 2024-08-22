@@ -1,0 +1,78 @@
+@use "../abstracts/" as *;
+
+.lodgeCarousel {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    z-index: 99;
+    .closeButton {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        cursor: pointer;
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+        img {
+            width: 28px;
+            height: 28px;
+        }
+    }
+    .leftArrow {
+        left: 16px;
+    }
+    .rightArrow {
+        right: 16px;
+    }
+    img {
+        width: 60%;
+        max-height: 70%;
+        object-fit: contain;
+        @include tablet-breakpoint {
+          width: 90%;
+      }
+    }
+}
+
+@keyframes lodgePicslideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes lodgePicSlideOut {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+  
+  .slideIn {
+    animation: lodgePicslideIn 0.5s ease-out forwards;
+  }
+  
+  .slideOut {
+    animation: lodgePicSlideOut 0.5s ease-out forwards;
+  }

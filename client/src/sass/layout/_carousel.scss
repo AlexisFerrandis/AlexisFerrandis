@@ -1,0 +1,101 @@
+@use "../abstracts/" as *;
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 75vh;
+    max-height: 735px;
+    transform: translateX(-12px); // align with other sections
+    overflow: hidden;
+    @include tablet-breakpoint {
+        height: 50vh;
+        transform: translateX(-6px)
+    }
+    .carousel-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: transform 1s, opacity 1s;
+        &.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        &.previous {
+            transform: translateX(-100%);
+        }
+
+        img {
+            width: 100%;
+            height: 75vh;
+            object-fit: cover;
+            max-height: 100%;
+            filter: brightness(0.7);
+            @include tablet-breakpoint {
+                height: 50vh;
+            }
+        }
+
+        p {
+            position: absolute;
+            width: 70%;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: $clr-secondary;
+            font-size: $font-size-300;
+        }
+    }
+
+    .carousel-title {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $clr-secondary;
+        margin: 32px auto;
+        z-index: 3;
+    }
+
+    .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        border: none;
+        cursor: pointer;
+
+        &.left {
+            left: 24px;
+        }
+
+        &.right {
+            right: 16px;
+        }
+    }
+
+    .carousel-dots {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+
+        .dot {
+            display: block;
+            width: 10px;
+            height: 10px;
+            border: 1px solid $clr-secondary;
+            border-radius: 50%;
+            cursor: pointer;
+
+            &.active {
+                background: $clr-secondary;
+            }
+        }
+    }
+}

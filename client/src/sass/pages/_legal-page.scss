@@ -1,0 +1,39 @@
+@use "../abstracts/" as *;
+
+.legalPage {
+    padding-top: 180px;
+    h2 {
+        text-align: center;
+        margin: 64px 0;
+    }
+    .section {
+        border-top: 1px solid $clr-primary;
+        article {
+            h6 {
+                font-family: $font-family-accent;
+                font-size: 28px;
+                font-weight: $font-weight-bold;
+                margin-bottom: 16px;
+                @include tablet-breakpoint {
+                    font-size: 26px;
+                }
+            }
+            p {
+                font-size: $font-size-400;
+                line-height: 28px;
+                margin-bottom: 48px;
+                @include tablet-breakpoint {
+                    font-size: $font-size-300;
+                }
+            }
+            a {
+                text-decoration: underline;
+            }
+            .mediation-logo {
+                width: 40%;
+                min-width: 300px;
+                margin: 24px auto;
+            }
+        }
+    }
+}

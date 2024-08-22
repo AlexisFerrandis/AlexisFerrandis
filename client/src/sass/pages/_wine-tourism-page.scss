@@ -1,0 +1,324 @@
+@use "../abstracts/" as *;
+
+.wineTourismPage {    
+    h2 {
+        text-align: center;
+        margin: $heading-2-margin;
+       
+    }
+    .section {
+        position: relative;
+        margin-bottom: 120px;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -48px;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            background-color: $clr-primary;
+        }
+    }
+    .introduction {
+        text-align: center;
+        width: 100%;
+        &__text {
+            width: 91%;
+            margin: 0 auto 60px;
+            font-size: $font-size-400;
+            font-weight: $font-weight-semi-bold;
+            @include tablet-breakpoint {
+                font-size: $font-size-300;
+            }
+        }
+        &__img {
+            img {
+                object-fit: cover;
+                height: 322px;
+            }
+            img:nth-child(1) {
+                width: 25%;
+                padding-right: 20px;
+            }
+            img:nth-child(2) {
+                width: 45%;
+                padding-right: 20px;
+            }
+            img:nth-child(3) {
+                width: 30%;
+            }
+        }
+    }
+    h3 {
+        font-size: $font-size-600;
+        text-align: center;
+        margin-bottom: 48px;
+    }
+    .section {
+        //padel 
+        &__content {
+            .top-part {
+                display: flex;
+                margin-bottom: 64px;
+                @include tablet-breakpoint {
+                    flex-direction: column;
+                }
+                .illustration {
+                    width: 50%;
+                    height: 100%;
+                    @include tablet-breakpoint {
+                        width: 100%;
+                        margin-bottom: 32px;
+                    }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .text {
+                    width: 50%;
+                    padding-left: 24px;
+                    @include tablet-breakpoint {
+                        width: 100%;
+                        padding-left: 0;
+                    }
+                    p {
+                        margin-bottom: 8px;
+                        line-height: 26px;
+                    }
+                    .cta-container {
+                        margin: 32px 0;
+                        @include tablet-breakpoint {
+                            display: flex;
+                            justify-content: center;
+                        }
+                    }
+                    .info {
+                        font-family: $font-family-accent;
+                        font-size: $font-size-100;
+                        font-style: italic;
+                        line-height: 15px;
+                    }
+                }
+            }
+            .bottom-part {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 124px;
+                @include tablet-breakpoint {
+                    flex-direction: column;
+                    width: 100%;
+                    align-items: center;
+                }
+                .article {
+                    width: 32%;
+                    @include tablet-breakpoint {
+                        width: 99%;
+                        max-width: 420px;
+                        margin-bottom: 64px;
+                    }
+                    h4 {
+                        font-size: $font-size-400;
+                        font-weight: $font-weight-semi-bold;
+                        margin-bottom: 12px;
+                        @include tablet-breakpoint {
+                            text-align: center;
+                        }
+                    }
+                    .content {
+                        border: 1px solid $clr-primary;
+                        padding: 24px 24px 0;
+                        margin-bottom: 24px;
+                        h5 {
+                            font-size: $font-size-400;
+                            font-weight: $font-weight-extra-bold;
+                            margin-bottom: 12px;
+                        }
+                        ul {
+                            list-style-type : disc;
+                            list-style-position : inside;
+                            margin-left: 12px;
+                            margin-bottom: 48px;
+                        }
+                    }
+                    .info {
+                        font-family: $font-family-accent;
+                        font-size: $font-size-100;
+                        font-style: italic;
+                        line-height: 15px;
+                    }
+                }
+            }
+        }
+        //winetourism
+        &__content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            @include tablet-breakpoint {
+                flex-direction: column;
+            }
+            &--card {
+                width: 46%;
+                margin-bottom: 90px;
+                @include tablet-breakpoint {
+                    width: 100%;
+                }
+                h4 {
+                    font-size: 28px;
+                    font-weight: $font-weight-extra-bold;
+                    margin-bottom: 20px;
+                    @include tablet-breakpoint {
+                        font-size: 24px;
+                    }
+                }
+                .card-img {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    img {
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+                article {
+                    p {
+                        margin-bottom: 10px;
+                    }
+                    span {
+                        font-weight: $font-weight-extra-bold;
+                        font-size: $font-size-400;
+                        @include tablet-breakpoint {
+                            font-size: $font-size-300;
+                        }
+                    }
+                    ul {
+                        list-style-type : disc;
+                        list-style-position : inside;
+                        margin-left: 10px;
+                        margin-bottom: 10px;
+                        line-height: 1.8;
+                    }
+                    .italic {
+                        font-style: italic;
+                        font-family: $font-family-accent;
+                        @include tablet-breakpoint {
+                            font-size: $font-size-100;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #seminars {
+        .carousel-img {
+            margin-bottom: 60px;
+        }
+        .section__information {
+            display: flex;
+            text-align: left;
+            @include tablet-breakpoint {
+                flex-direction: column;
+            }
+            .left-part, .right-part {
+                width: 45%;
+                border-left: 1px solid $clr-primary;
+                padding: 10px 30px;
+                margin-left: 30px;
+                @include tablet-breakpoint {
+                    width: 100%;
+                    border-left: none;
+                    padding: 0;
+                    margin-left:0;
+                }
+                .info {
+                    display: flex;
+                    margin-bottom: 20px;
+                    width: 100%;
+                    img {
+                        margin-right: 20px;
+                    }
+                    p {
+                        line-height: inherit;
+                        font-family: $font-family-accent;
+                        font-style: italic;
+                    }
+                    span {
+                        font-family: $font-family-base;
+                        font-size: $font-size-300;
+                        font-weight: $font-weight-default;
+                        font-style: normal;
+                    }
+                }
+            }
+            .left-part {
+                width: 55%;
+                @include tablet-breakpoint {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .contact {
+        h4 {
+            font-size: 28px;
+            font-weight: $font-weight-extra-bold;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        article {
+            display: flex;
+            width: 100%;
+            font-size: $font-size-400;
+            font-weight: $font-weight-semi-bold;
+            @include tablet-breakpoint {
+                flex-direction: column;
+                font-size: $font-size-300;
+            }
+            @include mobile-breakpoint {
+                font-size: $font-size-200;
+            }
+            .left, .right{
+                width: 50%;
+                @include tablet-breakpoint {
+                    width: 100%;
+                }
+            }
+            .left {
+                text-align: right;
+                padding-right: 40px;
+                border-right: 1px solid $clr-primary;
+                @include tablet-breakpoint {
+                    border: none;
+                    text-align: left;
+                    margin-bottom: 24px;
+                    padding-right: 0;
+                }
+            }
+            .right {
+                padding-left: 40px;
+                @include tablet-breakpoint {
+                    border: none;
+                    text-align: left;
+                    margin-bottom: 24px;
+                    padding-left: 0;
+                }
+                span {
+                    font-weight: $font-weight-extra-bold;
+                }
+                .mail {
+                    position: relative;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 1px;
+                        background-color:$clr-primary;
+                    }
+                }
+            }
+        }
+    }
+}

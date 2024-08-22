@@ -1,0 +1,22 @@
+@use "breakpoints" as *;
+
+@mixin desktopHD-breakpoint {
+    @media (max-width: $x-large) {
+        @content;
+    }
+}
+@mixin desktop-breakpoint {
+    @media (max-width: $large) {
+        @content;
+    }
+}
+@mixin tablet-breakpoint {
+    @media (max-width: $medium) {
+        @content;
+    }
+}
+@mixin mobile-breakpoint {
+    @media (max-width: $small) {
+        @content;
+    }
+}

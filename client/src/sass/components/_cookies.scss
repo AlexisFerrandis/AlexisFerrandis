@@ -1,0 +1,48 @@
+@use "../abstracts/" as *;
+
+.cookies {
+    position: fixed;
+    min-width: 320px;
+    width: 30%;
+    bottom: 32px;
+    left: 18px;
+    padding: 16px;
+    text-align: center;
+    background-color: $bg-primary;
+    border: 1px solid $clr-primary;
+    border-radius: 8px;
+    -webkit-box-shadow: 5px 0px 25px 5px rgba(0,0,0,0.27); 
+    box-shadow: 5px 0px 25px 5px rgba(0,0,0,0.27);
+    z-index: 999;
+    @include tablet-breakpoint {
+        padding: 12px;
+    }
+    .title {
+        font-family: $font-family-accent;
+        font-weight: $font-weight-extra-bold;
+        font-size: $font-size-500;
+        margin-bottom: 8px;
+        @include tablet-breakpoint {
+            font-size: $font-size-400;
+        }
+    }
+    .info {
+        max-width: 90%;
+        margin: 0 auto 24px;
+        font-family: $font-family-accent;
+        font-weight: $font-weight-default;
+        font-size: $font-size-200;
+        line-height: 20px;
+        // font-style: italic;
+    }
+    .closeButton {
+        position: absolute;
+        top: 16px ;
+        right: 16px;
+        img {
+            margin: inherit;
+            width: 16px;
+            height: 16px;
+        }
+    }
+}

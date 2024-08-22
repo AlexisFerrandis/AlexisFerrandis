@@ -1,0 +1,211 @@
+@use "../abstracts/" as *;
+
+.productSheetPage {
+    .arianne {
+        font-size: $font-size-400;
+        margin: 16px 0 64px;
+        span {
+            font-weight: $font-weight-bold;
+        }
+    }
+    .shop-content {
+        display: flex;
+        justify-content: space-between;
+        .presentation {
+            display: flex;
+            align-items: center;
+            width: 68%;
+            padding: 24px 130px 24px 32px;
+            background-color: $product-bg;
+            border: 1px solid $clr-primary;
+            .illustration {
+                img {
+                    height: 600px;
+                    object-fit: contain;
+                }
+            }
+            .text {
+                padding-left: 16px;
+                h2 {
+                    margin-bottom: 8px;
+                }
+                .definition {
+                    font-size: $font-size-300;
+                    font-family: $font-family-accent;
+                    font-weight: $font-weight-semi-bold;
+                    margin-bottom: 64px;
+                }
+                .description {
+                    margin-bottom: 64px;
+                }
+                .quote {
+                    
+                    font-family: $font-family-accent;
+                    font-size: $font-size-900;
+                    font-weight: $font-weight-thin;
+                    font-style: italic;
+                    line-height: 48px;
+                }
+            }
+        }
+        .basket-handler {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            padding: 80px 24px 0;
+            background-color: $product-bg;
+            border: 1px solid $clr-primary;
+            .price {
+                margin-bottom: 48px;
+                p {
+                    font-size: $font-size-1200;
+                    font-weight: $font-weight-semi-bold;
+                    font-family: $font-family-accent;
+                    line-height: 24px;
+                }
+                span {
+                    font-weight: $font-weight-thin;
+                    font-weight: $font-weight-semi-bold;
+                    strong {
+                        font: 56px monospace; 
+                    }
+                }
+                .unity {
+                    font-size: $font-size-300;
+                    font-family: $body-font-family;
+                }
+            }
+            .quantity {
+                font-family: $font-family-accent;
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: $font-weight-extra-bold;
+                input {
+                    width: 94%;
+                    padding: 8px 0 8px 16px;
+                    margin-bottom: 16px;
+                    font-family: $body-font-family;
+                    font-size: $font-size-300;
+                    color: $clr-primary;
+                    background-color: transparent;
+                    border: 1px solid $clr-primary;
+                }
+            }
+            button {
+                margin-bottom: 16px;
+            }
+            .stock {
+                display: flex;
+                align-items: center;
+                margin-bottom: 48px;
+                img {
+                    width: 20px;
+                    height: 20px;
+                    object-fit: contain;
+                    margin-right: 12px;
+                }
+                p {
+                    font-family: $font-family-accent;
+                    font-size: $font-size-300;
+                    font-weight: $font-weight-semi-bold;
+                    font-style: italic;
+                }
+            }
+            .delivery {
+                display: flex;
+                padding: 8px 16px 0 0;
+                margin-bottom: 96px;
+                justify-content: space-between;
+                font-size: $font-size-400;
+                border-top: 1px solid $clr-primary;
+            }
+            .security {
+                display: flex;
+                justify-content: space-between;
+                .case {
+                    display: flex;
+                    align-items: center;
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        object-fit: contain;
+                        margin-right: 12px;
+                    }
+                    p {
+                        font-family: $font-family-accent;
+                        font-size: $font-size-200;
+                        font-weight: $font-weight-bold;
+                        line-height: 18px;
+                    }
+                }
+            }
+        }
+    }
+    .heading-2 {
+        text-align: center;
+        margin:  92px 0 92px;
+    }
+    .technical-sheet {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 124px;
+        .column {
+            min-height: 420px;
+            border-left: 1px solid $clr-primary;
+            padding-left: 16px;
+            width: 25%;
+            h4 {
+                font-size: $font-size-500;
+                margin-bottom: 48px;
+            }
+            .info {
+                margin-bottom: 32px;
+                .caption {
+                    font-family: $font-family-accent;
+                    text-transform: uppercase;
+                    font-size: $font-size-100;
+                }
+                .value {
+                    font-size: $font-size-500;
+                    font-weight:  900;
+                    line-height: 22px;
+                }
+                .intensity {
+                    position: relative;
+                    width: 90%;
+                    background-color:$product-bg;
+                    height: 20px;
+                    border: 1px solid $clr-primary;
+                    &:before {
+                        position: absolute;
+                        content: '';
+                        width: 45%;
+                        height: 100%;
+                        background-color: $clr-primary;
+                    }
+                }
+                .spice {
+                    &:before {
+                        width: 30%;
+                    }
+                }
+                .complexity {
+                    &:before {
+                        width: 80%;
+                    }
+                }
+                .fruity {
+                    &:before {
+                        width: 90%;
+                    }
+                }
+                img {
+                    width: 40px;
+                    height: 40px;
+                    object-fit: contain;
+                    margin-left: 32px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@use "../abstracts/" as *;
+
+.cta-button {
+    font-weight: $button-font-weight;
+    font-size: $button-font-size;
+    padding: $button-padding;
+    font-family: $button-font-family;
+    // min-width: $button-min-width;
+    &.primary {
+        border: 1px solid $clr-primary;
+        color: $clr-primary;
+    }
+    &.secondary {
+        border: 1px solid $clr-secondary;
+        color:$clr-secondary;
+        font-weight: $font-weight-thin;
+    }
+    &.primary-full {
+        border: 1px solid $clr-primary;
+        background-color: $clr-primary;
+        color: white;
+    }
+}
