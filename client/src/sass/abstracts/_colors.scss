@@ -1,32 +1,34 @@
-$clr-primary: hsl(219, 100%, 18%);
-$clr-secondary: hsl(63, 33%, 86%);
-$clr-accent: hsl(209, 79%, 17%);
+$clr-primary: hsl(272, 76%, 57%);
+$clr-secondary: hsl(0, 75%, 72%);
+$clr-accent: hsl(272, 100%, 80%);
 
-$bg-primary:hsl(60, 43%, 92%);
-$product-bg: hsl(60, 41%, 97%);
+$bg-primary: hsl(0, 0%, 0%);
 
-$clr-info: hsl(214, 84%, 56%);
-$clr-success: hsl(145, 63%, 42%);
-$clr-warning: hsl(45, 74%, 56%);
-$clr-error: hsl(0, 79%, 63%);
+$clr-info: hsl(272, 100%, 68%);
+$clr-success: hsl(145, 45%, 55%);
+$clr-warning: hsl(35, 70%, 58%);
+$clr-error: hsl(0, 75%, 60%);
 
-$btn-primary: hsl(209, 79%, 17%);
-$btn-secondary: hsl(28, 87%, 62%);
-$btn-hover: hsl(208, 80%, 12%);
-$btn-active: hsl(209, 22%, 42%);
-$btn-disable: hsl(209, 22%, 42%);
+$btn-primary: hsl(272, 76%, 57%);
+$btn-secondary: hsl(0, 75%, 72%);
+$btn-hover: hsl(272, 100%, 50%);
+$btn-active: hsl(272, 100%, 42%);
+$btn-disable: hsl(272, 100%, 75%);
 
-$clr-white: hsl(0 0% 100%);
-$clr-gray-100: hsl(0 0% 95%);
-$clr-gray-200: hsl(0 0% 82.5%);
-$clr-gray-300: hsl(0 0% 70%);
-$clr-gray-400: hsl(0 0% 60%);
-$clr-gray-500: hsl(0 0% 50%);
-$clr-gray-600: hsl(0 0% 40%);
-$clr-gray-700: hsl(0 0% 30%);
-$clr-gray-800: hsl(0 0% 17.5%);
-$clr-gray-900: hsl(0 0% 7.5%);
-$clr-black: hsl(0 0% 0%);
+$clr-white: hsl(0, 0%, 100%);
+$clr-gray-100: hsl(0, 0%, 95%);
+$clr-gray-200: hsl(0, 0%, 82.5%);
+$clr-gray-300: hsl(0, 0%, 70%);
+$clr-gray-400: hsl(0, 0%, 60%);
+$clr-gray-500: hsl(0, 0%, 50%);
+$clr-gray-600: hsl(0, 0%, 40%);
+$clr-gray-700: hsl(0, 0%, 30%);
+$clr-gray-800: hsl(0, 0%, 17.5%);
+$clr-gray-900: hsl(0, 0%, 7.5%);
+$clr-black: hsl(0, 0%, 0%);
 
-$primary-filter: brightness(0) saturate(100%) invert(5%) sepia(94%) saturate(6652%) hue-rotate(216deg) brightness(91%) contrast(101%);
-$secondary-filter: brightness(0) saturate(100%) invert(90%) sepia(17%) saturate(182%) hue-rotate(24deg) brightness(97%) contrast(98%);
+
+$filter-white:brightness(1) saturate(100%);
+$filter-primary:brightness(0) saturate(100%) invert(33%) sepia(55%) saturate(6404%) hue-rotate(260deg) brightness(94%) contrast(90%);
+$filter-secondary:brightness(0) saturate(100%) invert(67%) sepia(53%) saturate(1595%) hue-rotate(309deg) brightness(104%) contrast(86%);
+$filter-accent: brightness(0) saturate(100%) invert(66%) sepia(61%) saturate(1750%) hue-rotate(212deg) brightness(103%) contrast(101%);

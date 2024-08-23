@@ -5,7 +5,7 @@ body {
     font-weight: $body-font-weight;
     font-size: $body-font-size;
     color: $body-text-color;
-    background-color: $body-background-color;
+    // background-color: $body-background-color;
 }
 
 main {
@@ -17,6 +17,12 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 12px;
+}
+
+.section {
+    width: 80vw;
+    height: 80dvh;
+    margin: auto;
 }
 
 h1,h2,h3,h4 {

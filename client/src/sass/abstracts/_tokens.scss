@@ -57,8 +57,6 @@ $heading-1-font-weight: $font-weight-bold;
 $heading-2-font-size: $font-size-800;
 $heading-2-color: $heading-color-default;
 $heading-2-font-weight: $font-weight-bold;
-$heading-2-margin: 92px 0 128px;
-
 $heading-3-font-size: $font-size-800;
 $heading-3-color: $heading-color-default;
 $heading-3-font-weight: $font-weight-bold;
@@ -77,10 +75,10 @@ $heading-3-font-weight: $font-weight-bold;
 // $container-max-width-wide: 75rem;
 
 // // site header
-$site-header-background-color: $bg-primary;
+$site-header-background-color: transparent;
 $site-header-color: $color-text-default;
-// $site-header-padding: $size-8 0;
-$site-header-margin: 60px auto 0;
+$site-header-padding: $size-2 $size-4 ;
+$site-header-margin: 0 auto;
 $site-header-font-size: $font-size-300;
 // $site-header-font-family: $font-family-accent;
 // $site-header-jusitifcation-small-screens: center;
@@ -92,7 +90,8 @@ $navigation-color: $site-header-color;
 $navigation-background-color: $site-header-background-color;
 // $navigation-color-hover: $color-primary-300;
 $navigation-margin: $site-header-margin;
-// $navigation-gap: $size-9;
+$navigation-padding: $site-header-padding;
+$navigation-gap: $size-9;
 $navigation-link-text-decoration: none;
 $navigation-font-size: $site-header-font-size;
 $navigation-font-family: $font-family-accent;
@@ -102,8 +101,8 @@ $navigation-z-index: 9;
 // // site footer
 $footer-background-color: $bg-primary;
 $footer-text-color: $color-text-default;
-// $footer-link-color: $color-neutral-100;
-// $footer-link-color-hover: $color-primary-200;
+$footer-link-color: $clr-primary;
+$footer-link-color-hover: $clr-accent;
 $footer-link-font-family: $font-family-base;
 $footer-link-text-decoration: none;
 
@@ -111,11 +110,11 @@ $footer-link-text-decoration: none;
 $button-font-family: $body-font-family;
 $button-font-size: $font-size-300;
 $button-font-weight: $font-weight-default;
-// $button-text-transform: uppercase;
+$button-text-transform: uppercase;
 $button-padding: 0.5em 1.5em;
 $button-min-width: 290px;
-// $button-border: 0;
-// $button-border-radius: $border-radius-1;
+$button-border: 0;
+$button-border-radius: $border-radius-1;
 
 // $button-accent-color: $color-neutral-100;
 // $button-accent-background: $color-accent-400;
