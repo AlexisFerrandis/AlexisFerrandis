@@ -1,5 +1,83 @@
 @use "../abstracts/" as *;
 
 .home {
+    display: flex;
+    padding-top: 18dvh;
+    // padding-left: 2vw;
+    .hero {
+        width: 50%;
 
+        h1 {
+            margin-bottom: 5dvh;
+            font-size: $heading-1-font-size;
+            color: $heading-1-color;
+            font-weight: $heading-1-font-weight;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            user-select: none;
+
+            span {
+                color: $clr-secondary;
+            }
+        }
+
+        .parallax-circle-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 420px;
+            width: 42vw;
+            perspective: 1000px;
+            overflow: hidden;
+
+            .circle {
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                border: 2px solid #ffffff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: transform 0.6s ease-out;
+
+                .circle-text {
+                    color: #ffffff;
+                    font-size: $font-size-300;
+                    text-transform: uppercase;
+                    font-family: $font-family-accent;
+                    transition: transform 0.6s ease-out;
+                    pointer-events: none;
+                    cursor: pointer;
+
+                    .arrow {
+                        font-size: $font-size-700;
+                    }
+                }
+            }
+        }
+    }
+    
+    .social {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 30dvh;
+        img {
+            width: 32px;
+            height: 32px;
+            margin: 8px 0;
+            object-fit: cover;
+            opacity: 0.5;
+            filter: $filter-secondary;
+            transition:  0.3s ease-out;
+            cursor: pointer;
+            &:hover {
+                opacity: 1;
+                -webkit-box-shadow: 0px 5px 20px 5px rgba(237,130,130,0.4); 
+                box-shadow: 0px 5px 20px 5px rgba(237,130,130,0.4);
+            }
+        }
+    }
 }

@@ -67,7 +67,7 @@ const RoutesIndex = () => {
                                 animate="in"
                                 exit="back"
                                 variants={pageVariants}
-                                className='section'
+                                className='content'
                             >
                                 <Home />
                             </motion.div>
@@ -81,6 +81,7 @@ const RoutesIndex = () => {
                                 animate="in"
                                 exit="back"
                                 variants={pageVariants}
+                                className='content'
                             >
                                 <About />
                             </motion.div>
@@ -94,6 +95,7 @@ const RoutesIndex = () => {
                                 animate="in"
                                 exit="back"
                                 variants={pageVariants}
+                                className='content'
                             >
                                 <Portfolio />
                             </motion.div>
@@ -107,6 +109,7 @@ const RoutesIndex = () => {
                                 animate="in"
                                 exit="back"
                                 variants={pageVariants}
+                                className='content'
                             >
                                 <Contact />
                             </motion.div>

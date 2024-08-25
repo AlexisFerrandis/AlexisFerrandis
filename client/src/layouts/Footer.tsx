@@ -3,7 +3,7 @@ import React from 'react';
 const Footer: React.FC = () => {
 
     return (
-        <nav className={""}>
+        <nav className={"footer"}>
 
         </nav>
     );

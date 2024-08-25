@@ -50,9 +50,9 @@ $heading-color-default: $color-text-default;
 // $heading-line-height: 1.1;
 // $heading-text-transform: uppercase;
 
-$heading-1-font-size: $font-size-1200;
-$heading-1-color: $clr-secondary;
-$heading-1-font-weight: $font-weight-bold;
+$heading-1-font-size: $font-size-1500;
+$heading-1-color: $clr-white;
+$heading-1-font-weight: $font-weight-semi-bold;
 
 $heading-2-font-size: $font-size-800;
 $heading-2-color: $heading-color-default;
@@ -77,9 +77,9 @@ $heading-3-font-weight: $font-weight-bold;
 // // site header
 $site-header-background-color: transparent;
 $site-header-color: $color-text-default;
-$site-header-padding: $size-2 $size-4 ;
+$site-header-padding: $size-6 ;
 $site-header-margin: 0 auto;
-$site-header-font-size: $font-size-300;
+$site-header-font-size: $font-size-200;
 // $site-header-font-family: $font-family-accent;
 // $site-header-jusitifcation-small-screens: center;
 // $site-header-jusitifcation-large-screens: space-between;

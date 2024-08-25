@@ -9,18 +9,17 @@ body {
 }
 
 main {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 section,
 footer {
-    max-width: 1200px;
+    max-width: 1580px;
     margin: 0 auto;
-    padding: 0 12px;
 }
 
-.section {
-    width: 80vw;
+.content {
+    width: 85vw;
     height: 80dvh;
     margin: auto;
 }

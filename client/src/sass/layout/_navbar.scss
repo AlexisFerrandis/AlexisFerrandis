@@ -17,19 +17,31 @@
     @include tablet-breakpoint {
         height: 92px;
     }
-    // &__logo {
-    //     img {
-    //         width: 120px;
-    //         object-fit: cover;
-    //         filter: invert(1);
-    //         transform: translateY(12px);
-    //         // animation: svg-color-fluctuation 15s infinite;
-    //     }
-    // }
+    &__logo {
+        position: relative;
+        // &::after {
+        //     position: absolute;
+        //     content: "";
+        //     bottom: -24px;
+        //     left: -24px;
+        //     width: 42vw;
+        //     height: 2px;
+        //     background: rgb(237,130,130);
+        //     background: linear-gradient(90deg, rgba(237,130,130,1) 0%, rgba(0,32,43,0.17270658263305327) 100%);
+        // }
+        img {
+            width: 120px;
+            object-fit: cover;
+            filter: invert(1);
+            transform: translateY(12px);
+            filter: $filter-secondary;
+            // animation: svg-color-fluctuation 15s infinite;
+        }
+    }
     &__links {
         display: flex;
         justify-content: space-evenly;
-        width: 50%;
+        width: 42%;
         max-width: 1280px;
         margin-left: auto;
         li {
@@ -40,6 +52,7 @@
             cursor: pointer;
             a {
                 color:$clr-gray-200;
+                text-transform: uppercase;
                 text-decoration: none;
                 transition: 0.2s;
             }
@@ -47,7 +60,7 @@
         .active {
             a {
                 position: relative;
-                color: $clr-primary;
+                color: $clr-secondary;
 
             }
         }
