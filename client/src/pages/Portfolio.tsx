@@ -10,75 +10,126 @@ import srgamePreview from "../assets/preview/srgame.png"
 import winelabelPreview from "../assets/preview/wineLabel.png"
 import syrahgencePreview from "../assets/preview/syrahgence.png"
 import lrdbPreview from "../assets/preview/lrdb.png"
+import benjaminPreview from "../assets/preview/benjamin.png"
+import navicellePreview from "../assets/preview/navicelle.png"
+import litiniPreview from "../assets/preview/litini.png"
+import ffwPreview from "../assets/preview/ffw.png"
+import pokemonJs from "../assets/preview/pokemonJs.png"
 
 import projectPreview from "../assets/preview/konsol.png"
 
 const webProjects = [
     {
+        title: 'Fight For Words',
+        type: 'Application',
+        preview: ffwPreview,
+        technologies: ['Next.js', 'TypeScript', 'SCSS'],
+        link: 'https://www.fightforwords.com/'
+    },
+    {
+        title: 'La Navicelle',
+        type: 'E-commerce & Website',
+        preview: navicellePreview,
+        technologies: ['Next.js', 'TypeScript', 'SCSS'],
+        link: 'https://domainelanavicelle.com/'
+    },
+    {
+        title: 'Benjamin Laigret',
+        type: 'Portfolio',
+        preview: benjaminPreview,
+        technologies: ['Next.js', 'TypeScript', 'SCSS'],
+        link: 'https://www.benjaminlaigret.fr/'
+    },
+    {
+        title: 'Pokemon JS',
+        type: 'Video Game',
+        preview: pokemonJs,
+        technologies: ['Next.js', 'TypeScript', 'SCSS'],
+        link: 'https://www.pokemonjs.alexisferrandis.com/'
+    },
+    {
         title: 'Le Repaire de Bacchus',
+        type: 'Website',
         preview: lrdbPreview,
         technologies: ['Next.js', 'TypeScript', 'SCSS'],
         link: 'https://www.lerepairedebacchus.com/'
     },
     {
-        title: 'Syrahgence',
-        preview: syrahgencePreview,
+        title: 'Litini',
+        type: 'Website & Application',
+        preview: litiniPreview,
         technologies: ['Next.js', 'TypeScript', 'SCSS'],
-        link: 'https://syrahgence.fr/'
+        link: 'https://www.litini.alexisferrandis.com/'
     },
     {
         title: 'SRGame',
+        type: 'Video Game',
         preview: srgamePreview,
         technologies: ['Next.js', 'TypeScript', 'SCSS'],
         link: 'https://srgame.alexisferrandis.com/'
     },
     {
+        title: 'Syrahgence',
+        type: 'Website',
+        preview: syrahgencePreview,
+        technologies: ['Next.js', 'TypeScript', 'SCSS'],
+        link: 'https://syrahgence.fr/'
+    },
+    {
         title: 'Elodie Pascal',
+        type: 'Website',
         preview: elodiePreview,
         technologies: ['Next.js', 'TypeScript', 'SCSS'],
         link: 'https://elodiepascal.com/'
     },
     {
-        title: 'Wine-Label',
-        preview: winelabelPreview,
-        technologies: ['Next.js', 'TypeScript', 'SCSS'],
-        link: 'https://wine-label.fr/'
-    },
-    {
         title: 'Portfolio v2',
+        type: 'Portfolio',
         preview: portfolio2Preview,
         technologies: ['Next.js', 'TypeScript', 'SCSS'],
         link: 'https://v2.alexisferrandis.com/'
     },
     {
+        title: 'Facedook',
+        type: 'Application',
+        preview: facedookPreview,
+        technologies: ['React', 'Node.js', 'MongoDB'],
+        link: 'https://github.com/AlexisFerrandis/Facedook'
+    },
+    {
+        title: 'Wine-Label',
+        type: 'Application',
+        preview: winelabelPreview,
+        technologies: ['Next.js', 'TypeScript', 'SCSS'],
+        link: 'https://wine-label.fr/'
+    },
+    {
         title: 'Portfolio v1',
+        type: 'Portfolio',
         preview: portfolio1Preview,
         technologies: ['Next.js', 'TypeScript', 'SCSS'],
         link: 'https://v1.alexisferrandis.com/'
     },
     {
         title: 'Konsol',
+        type: 'Website',
         preview: konsolPreview,
         technologies: ['Next.js', 'TypeScript', 'SCSS'],
         link: 'https://konsol.alexisferrandis.com/'
-    },
-    {
-        title: 'Facedook',
-        preview: facedookPreview,
-        technologies: ['React', 'Node.js', 'MongoDB'],
-        link: 'https://github.com/AlexisFerrandis/Facedook'
     },
 ];
 
 const iotProjects = [
     {
         title: 'IoT Project 1',
+        type: 'Portfolio',
         preview: projectPreview,
         technologies: ['Arduino', 'C++', 'MQTT'],
         link: 'https://example.com/web-project-1'
     },
     {
         title: 'IoT Project 2',
+        type: 'Portfolio',
         preview: projectPreview,
         technologies: ['Raspberry Pi', 'Python', 'Node.js'],
         link: 'https://example.com/web-project-1'
@@ -128,6 +179,7 @@ const ProjectShowcase: React.FC<{ projects: typeof webProjects }> = ({ projects 
                     <motion.div className="project-card">
                         <img src={project.preview} alt={`${project.title} preview`} className="project-preview" />
                         <h3 className="project-title">{project.title}</h3>
+                        <h5 className='project-type'>{project.type}</h5>
                         <div className="project-technologies">
                             {project.technologies.map((tech, idx) => (
                                 <span

@@ -11,7 +11,6 @@
         color: $clr-white;
         font-size: 3.5rem;
         font-weight: $heading-1-font-weight;
-        // margin-bottom: 1.5rem;
     }
     h2 {
         font-size: 2rem;
@@ -21,7 +20,7 @@
         display: flex;
         justify-content: center;
         height: 42px;
-        transform: translateY(-76px);
+        transform: translateY(-56px);
         .parallax-circle-container {
             position: relative;
             display: flex;
@@ -96,14 +95,24 @@
             width: 100%;
             height: 180px;
             object-fit: cover;
+            object-position: top; 
             border-bottom: 3px solid #222;
         }
 
         .project-title {
             font-size: 1.5rem;
-            margin: 15px;
+            margin-top: 15px;
+            margin-left: 15px;
             color: #fff;
             letter-spacing: 1px;
+        }
+
+        .project-type {
+            margin-left: 15px;
+            margin-bottom: 15px;
+            color: $clr-gray-400;
+            font-weight: 300;
+            font-size: 0.8rem;
         }
 
         .project-technologies {

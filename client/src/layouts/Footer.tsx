@@ -16,14 +16,6 @@ const Footer: React.FC = () => {
                 </li>
                 <span>&bull;</span>
                 <li className={`footer__item ${location.pathname === '/about' ? 'active' : ''}`}>
-                    <Link to="/about">v1 </Link>
-                </li>
-                <span>&bull;</span>
-                <li className={`footer__item ${location.pathname === '/about' ? 'active' : ''}`}>
-                    <Link to="/about">v2 </Link>
-                </li>
-                <span>&bull;</span>
-                <li className={`footer__item ${location.pathname === '/about' ? 'active' : ''}`}>
                     <Link to="/about">© alexis ferrandis {currentYear}</Link>
                 </li>
             </ul>
