@@ -1,5 +1,5 @@
 $clr-primary: hsl(272, 76%, 57%);
-$clr-secondary: hsl(0, 75%, 72%);
+$clr-secondary: rgb(237, 130, 130);
 $clr-accent: hsl(272, 100%, 80%);
 
 $bg-primary: hsl(0, 0%, 0%);
@@ -33,3 +33,5 @@ $filter-white:brightness(1) saturate(100%);
 $filter-primary:brightness(0) saturate(100%) invert(33%) sepia(55%) saturate(6404%) hue-rotate(260deg) brightness(94%) contrast(90%);
 $filter-secondary:brightness(0) saturate(100%) invert(67%) sepia(53%) saturate(1595%) hue-rotate(309deg) brightness(104%) contrast(86%);
 $filter-accent: brightness(0) saturate(100%) invert(66%) sepia(61%) saturate(1750%) hue-rotate(212deg) brightness(103%) contrast(101%);
+$filter-success: brightness(0) saturate(100%) invert(70%) sepia(44%) saturate(448%) hue-rotate(92deg) brightness(88%) contrast(89%);
+$filter-error: brightness(0) saturate(100%) invert(34%) sepia(22%) saturate(5684%) hue-rotate(337deg) brightness(104%) contrast(80%);

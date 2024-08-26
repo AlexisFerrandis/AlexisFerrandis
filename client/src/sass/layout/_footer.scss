@@ -1,10 +1,35 @@
 @use "../abstracts/" as *;
 
 .footer {
-    position: relative;
-    background-color: $footer-background-color;
-    color: $footer-text-color;
-    font-family: $footer-link-font-family;
-    text-decoration: $footer-link-text-decoration;
-    margin-top: 60px;
+    position: fixed;
+    align-items: center;
+    width: 100%;
+    min-height: 105px;
+    background-color: $navigation-background-color;
+    padding: $navigation-padding;
+    font-family: $navigation-font-family;
+    font-weight: $navigation-font-weight;
+    font-size: $navigation-font-size;
+    text-decoration: $navigation-link-text-decoration;
+    transition: background-color 0.5s ease;
+    z-index: $navigation-z-index;
+    &__links {
+        display: flex;
+        justify-content: center;
+        .footer__item {
+            a {
+                color: $clr-gray-200;
+                text-transform: lowercase;
+                opacity: 0.5;
+                transition: 0.3s;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+        span {
+            font-size: 1.1rem;
+            margin: 0 0.5rem;
+        }
+    }
 }

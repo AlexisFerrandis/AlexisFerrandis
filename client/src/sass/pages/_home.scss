@@ -2,13 +2,13 @@
 
 .home {
     display: flex;
-    padding-top: 18dvh;
+    padding-top: 14dvh;
     // padding-left: 2vw;
     .hero {
         width: 50%;
 
         h1 {
-            margin-bottom: 5dvh;
+            margin-bottom: 6dvh;
             font-size: $heading-1-font-size;
             color: $heading-1-color;
             font-weight: $heading-1-font-weight;

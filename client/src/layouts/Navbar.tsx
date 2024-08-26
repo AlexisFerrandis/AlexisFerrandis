@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';;
+import { Link, useLocation } from 'react-router-dom';
 
-import signature from "../assets/signature.svg"
+import signature from "../assets/signature.svg";
 
 const Navbar: React.FC = () => {
     const location = useLocation();

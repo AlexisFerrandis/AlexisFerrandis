@@ -24,7 +24,7 @@ const RoutesIndex = () => {
             x: 0,
             scale: 1,
             transition: {
-                duration: 0.8,
+                duration: 0.5,
                 type: "spring",
                 stiffness: 120,
                 damping: 20,
@@ -36,7 +36,7 @@ const RoutesIndex = () => {
             x: "-100vw",
             scale: 0.95,
             transition: {
-                duration: 0.8,
+                duration: 0.5,
                 type: "tween",
                 ease: [0.43, 0.13, 0.23, 0.96]
             }
@@ -46,7 +46,7 @@ const RoutesIndex = () => {
             scale: [1, 0.95, 0.95],
             opacity: [1, 1, 0],
             transition: {
-                duration: 0.8,
+                duration: 0.5,
                 times: [0, 0.2, 1],
                 ease: "easeInOut"
             }

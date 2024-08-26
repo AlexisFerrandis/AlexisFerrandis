@@ -14,9 +14,9 @@
     text-decoration: $navigation-link-text-decoration;
     transition: background-color 0.5s ease;
     z-index: $navigation-z-index;
-    @include tablet-breakpoint {
-        height: 92px;
-    }
+    // @include tablet-breakpoint {
+    //     height: 92px;
+    // }
     &__logo {
         position: relative;
         // &::after {
@@ -55,6 +55,26 @@
                 text-transform: uppercase;
                 text-decoration: none;
                 transition: 0.2s;
+                &:hover {
+                    text-shadow: 2px 2px 8px rgba(237, 130, 130, 0.7);
+                }
+    
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    left: 0;
+                    bottom: -2px;
+                    background-color: $clr-secondary;
+                    transition: transform 0.3s ease;
+                    transform: scaleX(0);
+                    transform-origin: left;
+                }
+    
+                &:hover:after {
+                    transform: scaleX(1); 
+                }
             }
         }
         .active {
