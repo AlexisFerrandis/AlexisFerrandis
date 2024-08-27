@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import githubIco from "../assets/ico/github.svg";
 import linkedinIco from "../assets/ico/linkedin.svg";
 import dribbleIco from "../assets/ico/dribble.svg";
+import codepenIco from "../assets/ico/codepen.svg";
+import emailIco from "../assets/ico/envelope-solid.svg";
 
 const Home: React.FC = () => {
 
@@ -68,6 +70,11 @@ const Home: React.FC = () => {
             <motion.div className='social' variants={socialVariants}>
                 <ul>
                     <li>
+                        <a href="https://dribbble.com/alexisBabajko" target="_blank" rel="noopener noreferrer">
+                            <img src={codepenIco} alt="Codepen" />
+                        </a>
+                    </li>
+                    <li>
                         <a href="https://github.com/AlexisFerrandis/" target="_blank" rel="noopener noreferrer">
                             <img src={githubIco} alt="Github" />
                         </a>
@@ -84,12 +91,7 @@ const Home: React.FC = () => {
                     </li>
                     <li>
                         <a href="https://dribbble.com/alexisBabajko" target="_blank" rel="noopener noreferrer">
-                            Mail ?
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://dribbble.com/alexisBabajko" target="_blank" rel="noopener noreferrer">
-                            Code Pen ?
+                            <img src={emailIco} alt="Email" />
                         </a>
                     </li>
                 </ul>

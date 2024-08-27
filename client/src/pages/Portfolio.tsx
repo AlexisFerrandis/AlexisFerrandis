@@ -23,99 +23,99 @@ const webProjects = [
         title: 'Fight For Words',
         type: 'Application',
         preview: ffwPreview,
-        technologies: ['Next.js', 'TypeScript', 'SCSS'],
+        technologies: ['React', 'Node.js', 'MongoDB', 'Figma'],
         link: 'https://www.fightforwords.com/'
-    },
-    {
-        title: 'La Navicelle',
-        type: 'E-commerce & Website',
-        preview: navicellePreview,
-        technologies: ['Next.js', 'TypeScript', 'SCSS'],
-        link: 'https://domainelanavicelle.com/'
     },
     {
         title: 'Benjamin Laigret',
         type: 'Portfolio',
         preview: benjaminPreview,
-        technologies: ['Next.js', 'TypeScript', 'SCSS'],
+        technologies: ['React', 'SCSS', 'Gimp'],
         link: 'https://www.benjaminlaigret.fr/'
+    },
+    {
+        title: 'La Navicelle',
+        type: 'E-commerce & Website',
+        preview: navicellePreview,
+        technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB'],
+        link: 'https://domainelanavicelle.com/'
     },
     {
         title: 'Pokemon JS',
         type: 'Video Game',
         preview: pokemonJs,
-        technologies: ['Next.js', 'TypeScript', 'SCSS'],
+        technologies: ['React', 'SCSS', 'Gimp', 'Tiled'],
         link: 'https://www.pokemonjs.alexisferrandis.com/'
     },
     {
         title: 'Le Repaire de Bacchus',
         type: 'Website',
         preview: lrdbPreview,
-        technologies: ['Next.js', 'TypeScript', 'SCSS'],
+        technologies: ['React', 'Node.js', 'MongoDB', 'SCSS'],
         link: 'https://www.lerepairedebacchus.com/'
     },
     {
         title: 'Litini',
         type: 'Website & Application',
         preview: litiniPreview,
-        technologies: ['Next.js', 'TypeScript', 'SCSS'],
+        technologies: ['React', 'React Native', 'Beacon', 'BLE'],
         link: 'https://www.litini.alexisferrandis.com/'
     },
     {
         title: 'SRGame',
         type: 'Video Game',
         preview: srgamePreview,
-        technologies: ['Next.js', 'TypeScript', 'SCSS'],
+        technologies: ['HTML5', 'Vanilla JS', 'Gimp'],
         link: 'https://srgame.alexisferrandis.com/'
     },
     {
         title: 'Syrahgence',
         type: 'Website',
         preview: syrahgencePreview,
-        technologies: ['Next.js', 'TypeScript', 'SCSS'],
+        technologies: ['React', 'SCSS', 'Figma'],
         link: 'https://syrahgence.fr/'
     },
     {
         title: 'Elodie Pascal',
         type: 'Website',
         preview: elodiePreview,
-        technologies: ['Next.js', 'TypeScript', 'SCSS'],
+        technologies: ['React', 'SCSS', 'Figma'],
         link: 'https://elodiepascal.com/'
-    },
-    {
-        title: 'Portfolio v2',
-        type: 'Portfolio',
-        preview: portfolio2Preview,
-        technologies: ['Next.js', 'TypeScript', 'SCSS'],
-        link: 'https://v2.alexisferrandis.com/'
     },
     {
         title: 'Facedook',
         type: 'Application',
         preview: facedookPreview,
-        technologies: ['React', 'Node.js', 'MongoDB'],
+        technologies: ['React', 'Node.js', 'MongoDB', 'SCSS'],
         link: 'https://github.com/AlexisFerrandis/Facedook'
     },
     {
         title: 'Wine-Label',
         type: 'Application',
         preview: winelabelPreview,
-        technologies: ['Next.js', 'TypeScript', 'SCSS'],
+        technologies: ['TypeScript', 'QR Code', 'SCSS'],
         link: 'https://wine-label.fr/'
-    },
-    {
-        title: 'Portfolio v1',
-        type: 'Portfolio',
-        preview: portfolio1Preview,
-        technologies: ['Next.js', 'TypeScript', 'SCSS'],
-        link: 'https://v1.alexisferrandis.com/'
     },
     {
         title: 'Konsol',
         type: 'Website',
         preview: konsolPreview,
-        technologies: ['Next.js', 'TypeScript', 'SCSS'],
+        technologies: ['HTML5', 'Vanilla JS', 'Gimp'],
         link: 'https://konsol.alexisferrandis.com/'
+    },
+    {
+        title: 'Portfolio v2',
+        type: 'Portfolio',
+        preview: portfolio2Preview,
+        technologies: ['React', 'SCSS', 'Figma'],
+        link: 'https://v2.alexisferrandis.com/'
+    },
+    {
+        title: 'Portfolio v1',
+        type: 'Portfolio',
+        preview: portfolio1Preview,
+        technologies: ['React', 'SCSS'],
+        link: 'https://v1.alexisferrandis.com/'
     },
 ];
 
@@ -137,12 +137,23 @@ const iotProjects = [
 ];
 
 const techColors: { [key: string]: string } = {
-    'React': 'hsl(145, 45%, 55%)',
-    'Node.js': 'hsl(145, 45%, 55%)',
+    'HTML5': 'hsl(145, 45%, 55%)',
+    'Vanilla JS': 'hsl(210, 75%, 60%)',
+    'React': 'hsl(204, 100%, 50%)',
+    'Node.js': 'hsl(45, 75%, 60%)',
     'MongoDB': 'hsl(145, 45%, 55%)',
     'Next.js': 'hsl(272, 100%, 80%)',
     'TypeScript': 'hsl(272, 100%, 80%)',
     'SCSS': 'hsl(0, 75%, 60%)',
+    'Figma': 'hsl(272, 100%, 80%)',
+    'Gimp': 'hsl(272, 76%, 57%)',
+    'QR Code': 'hsl(45, 100%, 60%)',
+    'React Native': 'hsl(35, 70%, 58%)',
+    'Beacon': 'hsl(272, 76%, 57%)',
+    'BLE': 'hsl(0, 75%, 60%)',
+    'Tiled': 'hsl(145, 45%, 55%)',
+
+
     'Arduino': 'hsl(204, 100%, 50%)',
     'C++': 'hsl(210, 75%, 60%)',
     'MQTT': 'hsl(45, 100%, 60%)',
