@@ -1,0 +1,39 @@
+@use "../abstracts/" as *;
+
+.mouse-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid rgba(236, 236, 236, 0.5);
+    pointer-events: none;
+    transition: transform 0.2s ease, border-color 0.3s ease;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 1000;
+    mix-blend-mode: difference;
+    transform-origin: center;
+
+    @include tablet-breakpoint {
+        display: none;
+    }
+}
+
+.hover-title {
+    transform: translate(-50%, -50%) scale(2);
+    border: 1px solid;
+    border-color: rgba(230, 76, 76, 0.7);
+}
+
+.hover-image {
+    transform: translate(-50%, -50%) scale(2);
+    border: 1px solid;
+    border-color: rgba(237, 130, 130, 0.7);
+}
+
+.hover-link {
+    transform: translate(-50%, -50%) scale(2);
+    border: 1px solid;
+    border-color: rgba(76, 153, 230, 0.7);
+}

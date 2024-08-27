@@ -10,6 +10,8 @@ import About from "../../pages/About";
 import Portfolio from "../../pages/Portfolio";
 import Contact from "../../pages/Contact";
 
+import NotFound from '../../pages/NotFound';
+
 const RoutesIndex = () => {
     const location = useLocation();
 
@@ -112,6 +114,21 @@ const RoutesIndex = () => {
                                 className='content'
                             >
                                 <Contact />
+                            </motion.div>
+                        }
+                    />
+
+                    <Route
+                        path="*"
+                        element={
+                            <motion.div
+                                initial="initial"
+                                animate="in"
+                                exit="back"
+                                variants={pageVariants}
+                                className='content'
+                            >
+                                <NotFound />
                             </motion.div>
                         }
                     />

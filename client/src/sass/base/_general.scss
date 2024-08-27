@@ -5,11 +5,6 @@ body {
     font-weight: $body-font-weight;
     font-size: $body-font-size;
     color: $body-text-color;
-    // background-color: $body-background-color;
-}
-
-main {
-    overflow: hidden;
 }
 
 section,
@@ -22,37 +17,4 @@ footer {
     width: 85vw;
     height: 80dvh;
     margin: auto;
-}
-
-h1,h2,h3,h4 {
-    font-family: $heading-font-family;
-}
-
-h2 {
-    color: $heading-2-color;
-    font-size: $heading-2-font-size;
-    font-weight: $heading-2-font-weight;
-    @include tablet-breakpoint {
-        font-size: $font-size-700;
-    }
-    @include mobile-breakpoint {
-        font-size: $font-size-600;
-    }
-}
-h3 {
-    font-size: $heading-3-font-size;
-    color: $heading-3-color;
-    font-weight: $heading-3-font-weight;
-}
-
-p {
-    line-height: $body-line-height;
-}
-
-a {
-    color: $link-color;
-}
-
-a:is(:hover, :focus) {
-    color: $link-color-hover;
 }

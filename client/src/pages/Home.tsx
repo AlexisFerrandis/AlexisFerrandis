@@ -23,22 +23,25 @@ const Home: React.FC = () => {
         setOffset({ x: 0, y: 0 });
     };
 
-    const textVariants = {
+    const baseVariants = (delay = 0) => ({
         hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.2 } }
-    };
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay } }
+    });
 
-    const socialVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.6 } }
-    };
+    const socialLinks = [
+        { href: "https://codepen.io/alexisferrandis", img: codepenIco, alt: "Codepen" },
+        { href: "https://github.com/AlexisFerrandis/", img: githubIco, alt: "Github" },
+        { href: "https://www.linkedin.com/in/alexis-ferrandis-5b5343106/", img: linkedinIco, alt: "Linkedin" },
+        { href: "https://dribbble.com/alexisBabajko", img: dribbleIco, alt: "Dribble" },
+        { href: "mailto:contact@alexisferrandis.com", img: emailIco, alt: "Email" }
+    ];
 
     return (
         <motion.section className="home"
             initial="hidden"
             animate="visible"
         >
-            <motion.div className='hero' variants={textVariants}>
+            <motion.div className='hero' variants={baseVariants(0.2)}>
                 <h1>
                     Alexis
                     <br />
@@ -67,33 +70,15 @@ const Home: React.FC = () => {
                     </div>
                 </motion.div>
             </motion.div>
-            <motion.div className='social' variants={socialVariants}>
+            <motion.div className='social' variants={baseVariants(0.6)}>
                 <ul>
-                    <li>
-                        <a href="https://dribbble.com/alexisBabajko" target="_blank" rel="noopener noreferrer">
-                            <img src={codepenIco} alt="Codepen" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/AlexisFerrandis/" target="_blank" rel="noopener noreferrer">
-                            <img src={githubIco} alt="Github" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/alexis-ferrandis-5b5343106/" target="_blank" rel="noopener noreferrer">
-                            <img src={linkedinIco} alt="Linkedin" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://dribbble.com/alexisBabajko" target="_blank" rel="noopener noreferrer">
-                            <img src={dribbleIco} alt="Dribble" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://dribbble.com/alexisBabajko" target="_blank" rel="noopener noreferrer">
-                            <img src={emailIco} alt="Email" />
-                        </a>
-                    </li>
+                    {socialLinks.map((link, index) => (
+                        <li key={index}>
+                            <a href={link.href} target="_blank" rel="noopener noreferrer">
+                                <img src={link.img} alt={link.alt} />
+                            </a>
+                        </li>
+                    ))}
                 </ul>
             </motion.div>
         </motion.section>

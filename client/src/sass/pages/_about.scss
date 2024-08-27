@@ -1,58 +1,65 @@
 @use "../abstracts/" as *;
 
 .about-container {
-    background-color: $card-background;
-    padding: 1rem;
-    color: $clr-secondary;
     margin: 0 auto;
+    padding: 1rem;
+    background-color: $card-background;
+    color: $clr-secondary;
     border-radius: 12px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    font-family: $font-family-accent;
 
     .about-header {
         text-align: center;
         margin-bottom: 1.5rem;
     }
-    
+
     h1 {
-        color: $clr-white;
-        font-size: 3.5rem;
+        font-size: $heading-1-font-size;
         font-weight: $heading-1-font-weight;
+        color: $clr-white;
         margin-bottom: 1rem;
         text-align: center;
     }
+
     h2 {
-        font-size: 2rem;
-        color: $clr-secondary;
+        color: $heading-2-color;
+        font-size: $heading-2-font-size;
+        font-weight: $heading-2-font-weight;
     }
+
     h3 {
         color: $clr-accent;
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
+        font-size: $heading-3-font-size;
+        font-weight: $heading-3-font-weight;
+        margin-bottom: 1.3rem;
     }
 
     .about-main {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        gap: 48px; 
+        gap: 48px;
         margin-bottom: 2rem;
-        
+
         .about-description {
-            flex: 2 1 60%; 
+            flex: 2 1 60%;
             min-width: 300px;
             font-size: 1rem;
             color: $clr-white;
+            line-height: $body-line-height;
+
             span {
                 display: inline-block;
                 position: relative;
                 color: $clr-secondary;
                 font-weight: bold;
                 transition: all 0.3s ease;
-    
+
                 &:hover {
                     text-shadow: 2px 2px 8px rgba(237, 130, 130, 0.7);
                 }
-    
+
                 &:after {
                     content: '';
                     position: absolute;
@@ -65,25 +72,28 @@
                     transform: scaleX(0);
                     transform-origin: left;
                 }
-    
+
                 &:hover:after {
-                    transform: scaleX(1); 
+                    transform: scaleX(1);
                 }
             }
         }
+
         .about-experience {
-            flex: 1 1 25%; 
+            flex: 1 1 25%;
             min-width: 300px;
+
             ul {
                 list-style-type: none;
                 padding-left: 0;
                 font-size: 1rem;
                 color: $clr-white;
-    
+
                 li {
                     padding: 0.5rem 0;
                     margin-bottom: 0.5rem;
                     border-radius: 5px;
+                    letter-spacing: 1px;
                 }
             }
         }
@@ -93,33 +103,38 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        gap: 32px; 
+        gap: 32px;
         margin-bottom: 3vh;
+
         .about-skills {
-            flex: 1 1 20%; 
+            flex: 1 1 20%;
             min-width: 300px;
+
             ul {
                 list-style-type: none;
                 padding-left: 0;
                 font-size: 1rem;
                 color: $clr-white;
-    
+
                 li {
                     padding: 0.5rem 0;
                     margin-bottom: 0.5rem;
                     border-radius: 5px;
+                    letter-spacing: 1px;
                 }
             }
         }
+
         .about-technologies {
-            flex: 2 1 70%; 
+            flex: 2 1 70%;
             min-width: 300px;
+
             ul {
                 list-style-type: none;
                 padding-left: 0;
                 font-size: 1.1rem;
                 color: $clr-white;
-    
+
                 li {
                     padding: 0.5rem 0;
                     margin-bottom: 0.5rem;
@@ -127,19 +142,25 @@
                 }
             }
         }
-    
+
         .technologies-list {
             display: flex;
             flex-wrap: wrap;
+
             li {
                 flex: 1 1 calc(20% - 1rem);
-                // text-align: center;
+
                 .technology-icon {
                     width: 44px;
                     height: 44px;
                     object-fit: contain;
                     filter: brightness(0) saturate(100%) invert(98%) sepia(0%) saturate(0%) hue-rotate(170deg) brightness(86%) contrast(93%);
-                    transition: filter 0.3s ease;
+                    transition: 0.3s ease-out;
+
+                    &:hover {
+                        opacity: 1;
+                        filter: $filter-secondary drop-shadow(0px 7px 10px #ed8282);
+                    }
                 }
             }
         }

@@ -8,15 +8,15 @@ const Footer: React.FC = () => {
         <nav className={"footer"}>
             <ul className="footer__links">
                 <li className={`footer__item ${location.pathname === '/about' ? 'active' : ''}`}>
-                    <Link to="/about">gtcs</Link>
+                    <a href="/public/media/files/gtcs.pdf" target="_blank" rel="noopener noreferrer">gtcs</a>
                 </li>
                 <span>&bull;</span>
                 <li className={`footer__item ${location.pathname === '/about' ? 'active' : ''}`}>
-                    <Link to="/about">cv</Link>
+                    <a href="/public/media/files/cv.pdf" target="_blank" rel="noopener noreferrer">cv</a>
                 </li>
                 <span>&bull;</span>
                 <li className={`footer__item ${location.pathname === '/about' ? 'active' : ''}`}>
-                    <Link to="/about">© alexis ferrandis {currentYear}</Link>
+                    <Link to="/">© alexis ferrandis {currentYear}</Link>
                 </li>
             </ul>
         </nav>
