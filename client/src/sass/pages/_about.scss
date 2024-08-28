@@ -9,6 +9,17 @@
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
     font-family: $font-family-accent;
 
+    @include desktop-breakpoint {
+        overflow-y: scroll;
+        height: 83dvh;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
     .about-header {
         text-align: center;
         margin-bottom: 1.5rem;
@@ -20,19 +31,34 @@
         color: $clr-white;
         margin-bottom: 1rem;
         text-align: center;
+        @include tablet-breakpoint {
+            font-size: $font-size-800;
+        }
+        @include mobile-breakpoint {
+            font-size: $font-size-600;
+        }
     }
 
     h2 {
         color: $heading-2-color;
         font-size: $heading-2-font-size;
         font-weight: $heading-2-font-weight;
+        @include tablet-breakpoint {
+            font-size: $font-size-600;
+        }
+        @include mobile-breakpoint {
+            font-size: $font-size-500;
+        }
     }
 
     h3 {
         color: $clr-accent;
         font-size: $heading-3-font-size;
         font-weight: $heading-3-font-weight;
-        margin-bottom: 1.3rem;
+        margin-bottom: 1.5rem;
+        @include tablet-breakpoint {
+            text-align: center;
+        }
     }
 
     .about-main {
@@ -40,7 +66,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         gap: 48px;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
 
         .about-description {
             flex: 2 1 60%;
@@ -48,6 +74,15 @@
             font-size: 1rem;
             color: $clr-white;
             line-height: $body-line-height;
+            @include desktop-breakpoint {
+                line-height: 1.7;
+            }
+            p {
+                margin-bottom: 1rem;
+                @include tablet-breakpoint {
+                    margin-bottom: 1.5rem;
+                }
+            }
 
             span {
                 display: inline-block;
@@ -82,7 +117,13 @@
         .about-experience {
             flex: 1 1 25%;
             min-width: 300px;
-
+            @include desktop-breakpoint {
+                display: none;
+            }
+            @include tablet-breakpoint {
+                display: block;
+                text-align: center;
+            }
             ul {
                 list-style-type: none;
                 padding-left: 0;
@@ -101,15 +142,23 @@
 
     .about-toolkit {
         display: flex;
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
         justify-content: space-between;
         gap: 32px;
         margin-bottom: 3vh;
-
+        @include desktop-breakpoint {
+            flex-direction: column;
+        }
         .about-skills {
             flex: 1 1 20%;
             min-width: 300px;
-
+            @include desktop-breakpoint {
+                display: none;
+            }
+            @include tablet-breakpoint {
+                display: block;
+                text-align: center;
+            }
             ul {
                 list-style-type: none;
                 padding-left: 0;
@@ -146,10 +195,12 @@
         .technologies-list {
             display: flex;
             flex-wrap: wrap;
-
             li {
                 flex: 1 1 calc(20% - 1rem);
-
+                @include tablet-breakpoint {
+                    flex: 1 1 calc(33% - 1rem);
+                    text-align: center;
+                }
                 .technology-icon {
                     width: 44px;
                     height: 44px;

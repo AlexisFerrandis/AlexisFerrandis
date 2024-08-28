@@ -7,6 +7,7 @@ const Footer: React.FC = () => {
     return (
         <nav className="footer" aria-label="Footer Navigation" role="navigation">
             <ul className="footer__links">
+                <span>&bull;</span>
                 <li className="footer__item">
                     <a href="/public/media/files/gtcs.pdf" target="_blank" rel="noopener noreferrer">gtcs</a>
                 </li>
@@ -15,7 +16,7 @@ const Footer: React.FC = () => {
                     <a href="/public/media/files/cv.pdf" target="_blank" rel="noopener noreferrer">cv</a>
                 </li>
                 <span>&bull;</span>
-                <li className="footer__item">
+                <li className="footer__item cp">
                     <Link to="/">© alexis ferrandis {currentYear}</Link>
                 </li>
             </ul>

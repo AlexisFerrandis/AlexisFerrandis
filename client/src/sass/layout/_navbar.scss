@@ -3,6 +3,7 @@
 .navbar {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     min-height: 105px;
     background-color: $navigation-background-color;
@@ -16,6 +17,7 @@
 
     &__logo {
         position: relative;
+        z-index: 99;
 
         a {
             img {
@@ -23,24 +25,18 @@
                 object-fit: cover;
                 transform: translateY(12px);
                 filter: $filter-secondary;
-            }
-            &:after {
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 2px;
-                left: 0;
-                bottom: -20px;
-                background-color: $clr-secondary;
-                transition: transform 0.3s ease;
-                transform: scaleX(0);
-                transform-origin: left;
-            }
-            &:focus:after {
-                transform: scaleX(1);
+                @include tablet-breakpoint {
+                    width: 100px;
+                    transform: translateY(8px);
+                    
+                }
+                @include mobile-breakpoint {
+                    width: 90px;
+                    transform: translateY(6px);
+                    
+                }
             }
         }
-
     }
 
     &__links {
@@ -87,12 +83,90 @@
             }
         }
 
-        .active {
-            a {
-                color: $clr-secondary;
+        .active a {
+            color: $clr-secondary;
 
-                &:after {
-                    transform: scaleX(1);
+            &:after {
+                transform: scaleX(1);
+            }
+        }
+    }
+
+    &__menu-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 24px;
+        z-index: 99;
+        cursor: pointer;
+
+        .navbar__menu-toggle-bar {
+            width: 100%;
+            height: 3px;
+            background-color: $clr-gray-200;
+            transition: all 0.3s ease;
+
+            &:nth-child(1) {
+                transform-origin: top left;
+            }
+
+            &:nth-child(2) {
+                opacity: 1;
+            }
+
+            &:nth-child(3) {
+                transform-origin: bottom left;
+            }
+        }
+
+        &.open .navbar__menu-toggle-bar {
+            &:nth-child(1) {
+                transform: rotate(45deg);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    @include tablet-breakpoint {
+        &__links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 105px;
+            left: 0;
+            width: 100%;
+            background-color: $navigation-background-color;
+            padding: $navigation-padding;
+            z-index: $navigation-z-index;
+        }
+
+        &__links.open {
+            display: flex;
+            padding: 1rem 0 40dvh;
+            height: 80dvh;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 75%);
+        }
+
+        &__menu-toggle {
+            display: flex;
+        }
+    }
+
+    @include mobile-breakpoint {
+        &__links {
+            li {
+                margin: 0.5rem 0;
+
+                a {
+                    font-size: 1.5rem;
                 }
             }
         }

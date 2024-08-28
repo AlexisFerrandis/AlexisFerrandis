@@ -6,7 +6,7 @@
 
     .hero {
         width: 50%;
-
+        padding-left: 6vw;
         h1 {
             margin-bottom: 6dvh;
             font-size: $font-size-1500;
@@ -19,6 +19,13 @@
             span {
                 color: $clr-secondary;
             }
+
+            @include tablet-breakpoint {
+                font-size: $font-size-900;
+            }
+            @include mobile-breakpoint {
+                font-size: $font-size-700;
+            }
         }
 
         .parallax-circle-container {
@@ -30,7 +37,11 @@
             width: 42vw;
             perspective: 1000px;
             overflow: hidden;
-
+            @include tablet-breakpoint {
+                height: 320px;
+                width: 42vw;
+                overflow: visible;
+            }
             .circle {
                 position: absolute;
                 width: 200px;
@@ -41,6 +52,14 @@
                 justify-content: center;
                 align-items: center;
                 transition: transform 0.6s ease-out;
+                @include tablet-breakpoint {
+                    width: 150px;
+                    height: 150px;
+                }
+                @include mobile-breakpoint {
+                    width: 120px;
+                    height: 120px;
+                }
 
                 .circle-text {
                     color: #ffffff;
@@ -53,6 +72,19 @@
 
                     .arrow {
                         font-size: $font-size-700;
+                        @include tablet-breakpoint {
+                            font-size: $font-size-400;
+                        }
+                        @include mobile-breakpoint {
+                            font-size: $font-size-300;
+                        }
+                    }
+
+                    @include tablet-breakpoint {
+                        font-size: $font-size-200;
+                    }
+                    @include mobile-breakpoint {
+                        font-size: $font-size-100;
                     }
                 }
 
@@ -83,7 +115,10 @@
         display: flex;
         justify-content: flex-end;
         margin-top: 30dvh;
-
+        @include desktop-breakpoint {
+            padding-right: 6vw;
+        }
+        
         img {
             width: 28px;
             height: 28px;
@@ -97,6 +132,11 @@
             &:hover{
                 opacity: 1;
                 filter: $filter-secondary drop-shadow(0px 7px 10px #ed8282);
+            }
+
+            @include tablet-breakpoint {
+                width: 24px;
+                height: 24px;
             }
         }
         a:focus img {

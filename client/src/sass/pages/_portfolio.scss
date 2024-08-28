@@ -13,6 +13,12 @@
         font-weight: $heading-1-font-weight;
         color: $clr-white;
         font-family: $font-family-accent;
+        @include tablet-breakpoint {
+            font-size: $font-size-800;
+        }
+        @include mobile-breakpoint {
+            font-size: $font-size-600;
+        }
     }
 
     h2 {
@@ -20,6 +26,12 @@
         font-size: $heading-2-font-size;
         font-weight: $heading-2-font-weight;
         margin-bottom: 1rem;
+        @include tablet-breakpoint {
+            font-size: $font-size-600;
+        }
+        @include mobile-breakpoint {
+            font-size: $font-size-500;
+        }
     }
 
     .tabs {
@@ -68,13 +80,16 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 20px;
-    padding: 40px 5px 10px;
+    padding: 40px 2px 10px;
     margin-bottom: 2dvh;
     height: 63dvh;
     overflow-y: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    @include desktop-breakpoint {
+        justify-content: center;
 
+    }
     &::-webkit-scrollbar {
         display: none;
     }
@@ -84,6 +99,14 @@
         color: inherit;
         flex-basis: calc(33.333% - 20px);
         margin-bottom: 20px;
+        @include desktop-breakpoint {
+            flex-basis: calc(50% - 20px);
+
+        }
+        @include tablet-breakpoint {
+            flex-basis: calc(100% - 20px);
+
+        }
 
         &:nth-child(3n) {
             margin-right: 0;
@@ -110,6 +133,14 @@
             object-fit: cover;
             object-position: top;
             border-bottom: 3px solid #222;
+            @include tablet-breakpoint {
+                height: 250px;
+    
+            }
+            @include mobile-breakpoint {
+                height: 210px;
+    
+            }
         }
 
         .project-title {
@@ -120,6 +151,14 @@
             font-size: 1.5rem;
             color: #fff;
             letter-spacing: 1px;
+            @include tablet-breakpoint {
+                font-size: 1.4rem;
+    
+            }
+            @include mobile-breakpoint {
+                font-size: 1.3rem;
+    
+            }
         }
 
         .project-type {
@@ -134,7 +173,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin: 0 15px 15px;
+            margin: 0 4px 15px 15px;
 
             .technology-badge {
                 padding: 2px 10px;

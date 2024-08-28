@@ -2,10 +2,10 @@
 
 .footer {
     position: absolute;
+    bottom: 6px;
     align-items: center;
     width: 100%;
     background-color: transparent;
-    padding: $navigation-padding;
     font-family: $navigation-font-family;
     font-weight: $navigation-font-weight;
     font-size: $navigation-font-size;
@@ -14,7 +14,6 @@
     &__links {
         display: flex;
         justify-content: center;
-
         .footer__item {
             a {
                 color: $clr-gray-200;
@@ -33,6 +32,12 @@
             font-size: 1.1rem;
             margin: 0 0.5rem;
             color: $clr-secondary;
+        }
+
+        .cp {
+            @include tablet-breakpoint {
+                display: none;
+            }
         }
     }
 }

@@ -14,12 +14,12 @@ const MouseFollower: React.FC = () => {
             setIsMobile(mobileDevice);
         };
 
-        checkIfMobile(); // Vérifier si l'appareil est mobile au chargement
+        checkIfMobile();
 
-        window.addEventListener('resize', checkIfMobile); // Re-vérifier lors du redimensionnement de la fenêtre
+        window.addEventListener('resize', checkIfMobile);
 
         if (isMobile) {
-            return; // Si c'est un mobile, ne pas appliquer l'effet
+            return;
         }
 
         const moveFollower = (e: MouseEvent) => {
@@ -31,11 +31,10 @@ const MouseFollower: React.FC = () => {
                 const { x: mouseX, y: mouseY } = mousePosition.current;
                 const { x: followerX, y: followerY } = followerPosition.current;
 
-                // Interpolation pour le mouvement lissé
                 const dx = mouseX - followerX;
                 const dy = mouseY - followerY;
 
-                followerPosition.current.x += dx * 0.1; // Ajuster ce coefficient pour plus ou moins de décalage
+                followerPosition.current.x += dx * 0.1;
                 followerPosition.current.y += dy * 0.1;
 
                 followerRef.current.style.top = `${followerPosition.current.y}px`;
@@ -53,10 +52,6 @@ const MouseFollower: React.FC = () => {
             document.querySelectorAll('a, .project-card-link').forEach(el => {
                 applyHoverEffect(el as HTMLElement, 'hover-link');
             });
-
-            // document.querySelectorAll('span').forEach(el => {
-            //     applyHoverEffect(el as HTMLElement, 'hover-title');
-            // });
 
             document.querySelectorAll('img, .technology-icon').forEach(el => {
                 applyHoverEffect(el as HTMLElement, 'hover-image');

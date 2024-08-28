@@ -3,11 +3,11 @@ import Spline from '@splinetool/react-spline';
 
 const BackgroundScene: React.FC = () => {
     const handleLoad = () => {
-        console.log("Hello you 😊");
+        console.log("Background scene loaded.");
     };
 
     const handleError = () => {
-        console.log("It didn't work 🥲");
+        console.log("Background scene didn't loaded.");
     };
 
     return (

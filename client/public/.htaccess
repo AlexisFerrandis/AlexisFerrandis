@@ -1,0 +1,80 @@
+# Force HTTPS redirection
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Redirect URL for simple page app 
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Security: Protection against common attacks
+# Disable directory listing
+Options -Indexes
+
+# Protect the .htaccess file itself
+<Files .htaccess>
+Order Allow,Deny
+Deny from all
+</Files>
+
+# Block access to sensitive files
+<FilesMatch "\.(env|ini|log|sh|bak|swp|old|sql)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+# Prevent PHP execution in specific directories
+<FilesMatch "\.(php|phps|phtml|php3|php4|php5|php7)$">
+    <If "-f %{REQUEST_FILENAME}">
+        SetHandler none
+    </If>
+</FilesMatch>
+
+# Protection against clickjacking
+<IfModule mod_headers.c>
+Header always append X-Frame-Options SAMEORIGIN
+</IfModule>
+
+# Protection against XSS attacks
+<IfModule mod_headers.c>
+Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Protection against content sniffing
+<IfModule mod_headers.c>
+Header set X-Content-Type-Options nosniff
+</IfModule>
+
+# Caching to improve performance
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType text/css "access plus 1 day"
+    ExpiresByType text/html "access plus 1 day"
+    ExpiresByType application/pdf "access plus 1 day"
+    ExpiresByType text/x-javascript "access plus 1 day"
+    ExpiresByType application/x-shockwave-flash "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 month"
+    ExpiresDefault "access plus 1 day"
+</IfModule>
+
+# GZIP compression to reduce file sizes
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/xml application/xhtml+xml application/rss+xml application/atom_xml application/x-font-ttf application/x-font-otf application/vnd.ms-fontobject image/svg+xml
+</IfModule>
+
+# Protection against DDoS attacks (Limit HTTP request size)
+<IfModule mod_reqtimeout.c>
+    RequestReadTimeout header=20-40,MinRate=500 body=20,MinRate=500
+</IfModule>

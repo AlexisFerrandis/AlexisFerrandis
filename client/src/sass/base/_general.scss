@@ -14,7 +14,10 @@ footer {
 }
 
 .content {
-    width: 85vw;
+    width: 95vw;
     height: 80dvh;
     margin: auto;
+    @include desktop-breakpoint {
+        width: 100vw;
+    }
 }
