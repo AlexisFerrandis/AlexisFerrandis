@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 import signature from "../assets/signature.svg";
 
 const Navbar: React.FC = () => {
+    const { t } = useTranslation(); // Intégration de useTranslation
     const location = useLocation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -55,10 +57,10 @@ const Navbar: React.FC = () => {
                             closed: { opacity: 0, y: "-100%", transition: { duration: 0.5 } },
                         }}
                     >
-                        {['/about', '/portfolio', '/contact'].map((path, index) => (
+                        {['about', 'portfolio', 'contact'].map((key, index) => (
                             <motion.li
-                                key={path}
-                                className={`navbar__item ${location.pathname === path ? 'active' : ''}`}
+                                key={key}
+                                className={`navbar__item ${location.pathname === `/${key}` ? 'active' : ''}`}
                                 custom={index}
                                 initial="hidden"
                                 animate="visible"
@@ -69,21 +71,21 @@ const Navbar: React.FC = () => {
                                 }}
                             >
                                 <Link
-                                    to={path}
-                                    aria-current={location.pathname === path ? 'page' : undefined}
+                                    to={`/${key}`}
+                                    aria-current={location.pathname === `/${key}` ? 'page' : undefined}
                                     onClick={closeMenu}
                                 >
-                                    {path.replace('/', '').charAt(0).toUpperCase() + path.slice(2)}
+                                    {t(`navbar.${key}`)}
                                 </Link>
                             </motion.li>
                         ))}
                     </motion.ul>
                 ) : (
                     <ul className="navbar__links navigation">
-                        {['/about', '/portfolio', '/contact'].map((path) => (
-                            <li key={path} className={`navbar__item ${location.pathname === path ? 'active' : ''}`}>
-                                <Link to={path} aria-current={location.pathname === path ? 'page' : undefined}>
-                                    {path.replace('/', '').charAt(0).toUpperCase() + path.slice(2)}
+                        {['about', 'portfolio', 'contact'].map((key) => (
+                            <li key={key} className={`navbar__item ${location.pathname === `/${key}` ? 'active' : ''}`}>
+                                <Link to={`/${key}`} aria-current={location.pathname === `/${key}` ? 'page' : undefined}>
+                                    {t(`navbar.${key}`)}
                                 </Link>
                             </li>
                         ))}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 import githubIco from "../assets/ico/github.svg";
 import linkedinIco from "../assets/ico/linkedin.svg";
@@ -9,6 +10,7 @@ import codepenIco from "../assets/ico/codepen.svg";
 import emailIco from "../assets/ico/envelope-solid.svg";
 
 const Home: React.FC = () => {
+    const { t } = useTranslation();  // Utilisation du hook useTranslation
 
     const [offset, setOffset] = useState({ x: 0, y: 0 });
 
@@ -29,11 +31,11 @@ const Home: React.FC = () => {
     });
 
     const socialLinks = [
-        { href: "https://codepen.io/alexisferrandis", img: codepenIco, alt: "Codepen" },
-        { href: "https://github.com/AlexisFerrandis/", img: githubIco, alt: "Github" },
-        { href: "https://www.linkedin.com/in/alexis-ferrandis-5b5343106/", img: linkedinIco, alt: "Linkedin" },
-        { href: "https://dribbble.com/alexisBabajko", img: dribbleIco, alt: "Dribble" },
-        { href: "mailto:alexisferrandis@protonmail.com", img: emailIco, alt: "Email" }
+        { href: "https://codepen.io/alexisferrandis", img: codepenIco, alt: t('home.social.codepen') },
+        { href: "https://github.com/AlexisFerrandis/", img: githubIco, alt: t('home.social.github') },
+        { href: "https://www.linkedin.com/in/alexis-ferrandis-5b5343106/", img: linkedinIco, alt: t('home.social.linkedin') },
+        { href: "https://dribbble.com/alexisBabajko", img: dribbleIco, alt: t('home.social.dribble') },
+        { href: "mailto:alexisferrandis@protonmail.com", img: emailIco, alt: t('home.social.email') }
     ];
 
     return (
@@ -43,9 +45,9 @@ const Home: React.FC = () => {
         >
             <motion.div className='hero' variants={baseVariants(0.2)}>
                 <h1>
-                    Alexis
+                    {t('home.name')}
                     <br />
-                    <span>Ferrandis</span>
+                    <span>{t('home.surname')}</span>
                 </h1>
                 <motion.div
                     className="parallax-circle-container"
@@ -57,14 +59,14 @@ const Home: React.FC = () => {
                         className="circle"
                         style={{ transform: `translate(${offset.x}px, ${offset.y}px)` }}
                     >
-                        <Link to="/portfolio" aria-label="View Portfolio">
+                        <Link to="/portfolio" aria-label={t('home.showPortfolio')}>
                             <div
                                 className="circle-text"
                                 style={{ transform: `translate(${offset.x * 2}px, ${offset.y * 2}px)` }}
                             >
                                 <span className="arrow">⟶<br /></span>
-                                <span>Show<br /></span>
-                                <span>Portfolio</span>
+                                <span>{t('home.showPortfolio').split(' ')[0]}<br /></span>
+                                <span>{t('home.showPortfolio').split(' ')[1]}</span>
                             </div>
                         </Link>
                     </div>

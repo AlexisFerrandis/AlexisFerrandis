@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+
 import githubIco from "../assets/ico/github.svg";
 import linkedinIco from "../assets/ico/linkedin.svg";
 import dribbleIco from "../assets/ico/dribble.svg";
@@ -33,6 +35,8 @@ const Notification: React.FC<{ message: string, type: 'success' | 'error', onClo
 };
 
 const Contact: React.FC = () => {
+    const { t } = useTranslation();
+
     const apiUrl = import.meta.env.VITE_API_URL;
     const [notification, setNotification] = useState<{ message: string, type: 'success' | 'error' } | null>(null);
 
@@ -102,20 +106,20 @@ const Contact: React.FC = () => {
                 const result = await response.json();
                 if (result.status === "success") {
                     setNotification({
-                        message: "Thank you for your message!\nI'll get back to you soon 😊",
+                        message: t('contact.notifications.success'),
                         type: 'success'
                     });
                     setFormData({ name: '', company: '', email: '', message: '' });
                 } else {
                     setNotification({
-                        message: "An error occurred while sending your message 😥\nI'm probably working on fixing it!",
+                        message: t('contact.notifications.error'),
                         type: 'error'
                     });
                 }
             } catch (error) {
                 console.error('Erreur lors de l\'envoi du formulaire:', error);
                 setNotification({
-                    message: "An error occurred while sending your message 😥\nI'm probably working on fixing it!",
+                    message: t('contact.notifications.error'),
                     type: 'error'
                 });
             }
@@ -154,21 +158,21 @@ const Contact: React.FC = () => {
                 {...baseAnimation(0, 0, 20, 0.5)}
             >
                 <motion.h1 {...baseAnimation(0, -50)}>
-                    Contact
+                    {t('contact.title')}
                 </motion.h1>
                 <motion.h2 {...baseAnimation(0.1, -50)}>
-                    Let's keep in touch!
+                    {t('contact.subtitle')}
                 </motion.h2>
                 <motion.div
                     className="social-links"
                     {...baseAnimation(0.7, 0, 20)}
                 >
                     {[
-                        { href: "mailto:alexisferrandis@protonmail.com", img: emailIco, alt: "Email", delay: 0.8 },
-                        { href: "https://github.com/AlexisFerrandis/", img: githubIco, alt: "Github", delay: 0.9 },
-                        { href: "https://www.linkedin.com/in/alexis-ferrandis-5b5343106/", img: linkedinIco, alt: "Linkedin", delay: 1 },
-                        { href: "https://dribbble.com/alexisBabajko", img: dribbleIco, alt: "Dribble", delay: 1.1 },
-                        { href: "https://codepen.io/alexisferrandis", img: codepenIco, alt: "Codepen", delay: 1.2 }
+                        { href: "mailto:alexisferrandis@protonmail.com", img: emailIco, alt: t('contact.socialLinks.email'), delay: 0.8 },
+                        { href: "https://github.com/AlexisFerrandis/", img: githubIco, alt: t('contact.socialLinks.github'), delay: 0.9 },
+                        { href: "https://www.linkedin.com/in/alexis-ferrandis-5b5343106/", img: linkedinIco, alt: t('contact.socialLinks.linkedin'), delay: 1 },
+                        { href: "https://dribbble.com/alexisBabajko", img: dribbleIco, alt: t('contact.socialLinks.dribble'), delay: 1.1 },
+                        { href: "https://codepen.io/alexisferrandis", img: codepenIco, alt: t('contact.socialLinks.codepen'), delay: 1.2 }
                     ].map((link, index) => (
                         <motion.a
                             key={index}
@@ -189,10 +193,10 @@ const Contact: React.FC = () => {
                     aria-describedby="form-error"
                 >
                     {[
-                        { id: "name", label: "Name", type: "text", placeholder: "Name", error: errors.name, delay: 0.3 },
-                        { id: "company", label: "Company", type: "text", placeholder: "Company (optional)", delay: 0.4 },
-                        { id: "email", label: "Email", type: "email", placeholder: "Email", error: errors.email, delay: 0.5 },
-                        { id: "message", label: "Message", placeholder: "Message", textarea: true, error: errors.message, delay: 0.6 }
+                        { id: "name", label: t('contact.form.name'), type: "text", placeholder: t('contact.form.namePlaceholder'), error: errors.name, delay: 0.3 },
+                        { id: "company", label: t('contact.form.company'), type: "text", placeholder: t('contact.form.companyPlaceholder'), delay: 0.4 },
+                        { id: "email", label: t('contact.form.email'), type: "email", placeholder: t('contact.form.emailPlaceholder'), error: errors.email, delay: 0.5 },
+                        { id: "message", label: t('contact.form.message'), placeholder: t('contact.form.messagePlaceholder'), textarea: true, error: errors.message, delay: 0.6 }
                     ].map((field, index) => (
                         <motion.div
                             key={index}
@@ -227,7 +231,7 @@ const Contact: React.FC = () => {
                             )}
                             {field.error && (
                                 <span id={`${field.id}-error`} className="error-message">
-                                    {field.id.charAt(0).toUpperCase() + field.id.slice(1)} is required.
+                                    {t(`contact.form.errors.${field.id}`)}
                                 </span>
                             )}
                         </motion.div>
@@ -238,7 +242,7 @@ const Contact: React.FC = () => {
                         {...baseAnimation(0.7, 0, 10, 0.4)}
                         whileTap={{ scale: 0.98 }}
                     >
-                        Send
+                        {t('contact.form.submitButton')}
                     </motion.button>
                 </motion.form>
             </motion.div>

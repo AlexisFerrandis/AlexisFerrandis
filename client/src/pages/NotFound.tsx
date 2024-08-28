@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const NotFound: React.FC = () => {
+    const { t } = useTranslation();
+
     return (
         <div className="not-found" role="alert">
-            <h1>404 - Page Not Found</h1>
+            <h1>{t('notFound.title')}</h1>
             <h3>
-                <Link to="/" aria-label="Return to the main page">
-                    Return to <span>main page</span>
+                <Link to="/" aria-label={t('notFound.linkLabel')}>
+                    {t('notFound.linkText')} <span>{t('notFound.linkText')}</span>
                 </Link>
             </h3>
         </div>

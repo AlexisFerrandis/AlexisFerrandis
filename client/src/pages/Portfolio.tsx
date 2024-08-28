@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 import { webProjects, iotProjects, techColors } from '../utils/PortfolioData';
 
@@ -51,6 +52,7 @@ const ProjectShowcase: React.FC<{ projects: typeof webProjects }> = ({ projects 
 };
 
 const Portfolio: React.FC = () => {
+    const { t } = useTranslation();
     const [selectedTab, setSelectedTab] = useState<'Web' | 'IoT'>('Web');
     const [offset, setOffset] = useState({ x: 0, y: 0 });
 
@@ -120,8 +122,8 @@ const Portfolio: React.FC = () => {
             role="tabpanel"
             aria-labelledby={selectedTab === 'Web' ? 'web-tab' : 'iot-tab'}
         >
-            <h1>Portfolio</h1>
-            <div className="tabs" role="tablist" aria-label="Portfolio Categories">
+            <h1>{t('portfolio.title')}</h1>
+            <div className="tabs" role="tablist" aria-label={t('portfolio.title')}>
                 {renderTab('Web', offset, (e) => handleMouseMove(e, setOffset), () => handleMouseLeave(setOffset))}
                 {renderTab('IoT', offset, (e) => handleMouseMove(e, setOffset), () => handleMouseLeave(setOffset))}
             </div>
@@ -137,7 +139,7 @@ const Portfolio: React.FC = () => {
                         variants={tabContentVariants}
                         id="web-tab"
                     >
-                        <h2>Web Projects</h2>
+                        <h2>{t('portfolio.webProjects')}</h2>
                         <ProjectShowcase projects={webProjects} />
                     </motion.div>
                 ) : (
@@ -150,7 +152,7 @@ const Portfolio: React.FC = () => {
                         variants={tabContentVariants}
                         id="iot-tab"
                     >
-                        <h2>IoT Projects</h2>
+                        <h2>{t('portfolio.iotProjects')}</h2>
                         <ProjectShowcase projects={iotProjects} />
                     </motion.div>
                 )}

@@ -1,0 +1,94 @@
+{
+    "navbar": {
+        "about": "À propos",
+        "portfolio": "Portfolio",
+        "contact": "Contact"
+    },
+    "footer": {
+        "gtcs": "cgv",
+        "cv": "cv",
+        "copyright": "© alexis ferrandis {{year}}"
+    },
+    "home": {
+        "name": "Alexis",
+        "surname": "Ferrandis",
+        "showPortfolio": "Mes projets",
+        "social": {
+            "codepen": "Codepen",
+            "github": "Github",
+            "linkedin": "Linkedin",
+            "dribble": "Dribble",
+            "email": "Email"
+        }
+    },
+    "about": {
+        "title": "Alexis Ferrandis",
+        "header": "Intégrateur Web",
+        "description": {
+            "part1": "Au cours des quatre dernières années en tant que <1>développeur freelance,</1> j'ai eu l'opportunité de collaborer à distance avec des agences, de conseiller des entreprises, et de travailler aux côtés d'experts pour concevoir des produits numériques destinés aux professionnels comme aux particuliers. Mon objectif est de créer des expériences numériques <2>soignées,</2> <3>engageantes</3> et <4>accessibles.</4>",
+            "part2": "La collaboration et la communication ouverte sont au <1>cœur de ma méthode.</1> Comprendre les besoins spécifiques de chaque client et membre de l'équipe est essentiel pour élaborer des solutions pertinentes et durables.",
+            "part3": "Quand je ne suis pas devant mon ordinateur, vous me trouverez en train de bricoler, d'étudier de nouvelles technologies, de passer du temps avec ma copine et mon chat, ou d'explorer des jeux vidéo pour en découvrir les <1>secrets bien gardés.</1>"
+        },
+        "experience": {
+            "title": "Expérience",
+            "list": [
+                "Développeur Frontend & Backend",
+                "Responsable Digital",
+                "Community Manager"
+            ]
+        },
+        "skills": {
+            "title": "Compétences",
+            "list": [
+                "Agile/Scrum",
+                "Gestion de projet",
+                "Résolution de problèmes",
+                "Français & Anglais"
+            ]
+        },
+        "technologies": {
+            "title": "Technologies"
+        }
+    },
+    "portfolio": {
+        "title": "Portfolio",
+        "webProjects": "Projets Web",
+        "iotProjects": "Projets IoT"
+    },
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Prenons contact !",
+        "form": {
+            "name": "Nom",
+            "company": "Entreprise",
+            "email": "Email",
+            "message": "Message",
+            "namePlaceholder": "Nom",
+            "companyPlaceholder": "Entreprise (facultatif)",
+            "emailPlaceholder": "Email",
+            "messagePlaceholder": "Message",
+            "submitButton": "Envoyer",
+            "errors": {
+                "name": "Le nom est requis.",
+                "email": "L'email est requis.",
+                "message": "Le message est requis."
+            }
+        },
+        "notifications": {
+            "success": "Merci pour votre message !\nJe vous répondrai bientôt 😊",
+            "error": "Une erreur est survenue lors de l'envoi de votre message 😥\nJe suis probablement en train de la corriger !"
+        },
+        "socialLinks": {
+            "email": "Email",
+            "github": "Github",
+            "linkedin": "Linkedin",
+            "dribble": "Dribble",
+            "codepen": "Codepen"
+        }
+    },
+    "notFound": {
+        "title": "404 - Page introuvable",
+        "linkText": "Retour à la page principale",
+        "linkLabel": "Retourner à la page principale"
+    }
+}

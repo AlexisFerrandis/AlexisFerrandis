@@ -1,0 +1,94 @@
+{
+    "navbar": {
+        "about": "About",
+        "portfolio": "Portfolio",
+        "contact": "Contact"
+    },
+    "footer": {
+        "gtcs": "gtcs",
+        "cv": "cv",
+        "copyright": "© alexis ferrandis {{year}}"
+    },
+    "home": {
+        "name": "Alexis",
+        "surname": "Ferrandis",
+        "showPortfolio": "Show Portfolio",
+        "social": {
+            "codepen": "Codepen",
+            "github": "Github",
+            "linkedin": "Linkedin",
+            "dribble": "Dribble",
+            "email": "Email"
+        }
+    },
+    "about": {
+        "title": "Alexis Ferrandis",
+        "header": "Web Integrator",
+        "description": {
+            "part1": "Over the past four years as a <1>freelance developer,</1> I've had the privilege of working remotely with agencies, consulting for companies, and collaborating with talented individuals to craft digital products for both business and consumer use. I take pride in creating <2>pixel-perfect,</2> <3>engaging,</3> and <4>accessible</4> digital experiences.",
+            "part2": "Collaboration and open communication are at the <1>heart of my work.</1> I believe that understanding the unique needs of each client and team member is key to delivering solutions that truly resonate.",
+            "part3": "When I'm not at the computer, you'll find me building things, diving into books, spending time with my wife and cat, or exploring video games to uncover their <1>hidden secrets.</1>"
+        },
+        "experience": {
+            "title": "Experience",
+            "list": [
+                "Frontend & Backend Developer",
+                "Digital Manager",
+                "Community Manager"
+            ]
+        },
+        "skills": {
+            "title": "Skills",
+            "list": [
+                "Agile/Scrum",
+                "Project Management",
+                "Problem-Solving",
+                "French & English"
+            ]
+        },
+        "technologies": {
+            "title": "Technologies"
+        }
+    },
+    "portfolio": {
+        "title": "Portfolio",
+        "webProjects": "Web Projects",
+        "iotProjects": "IoT Projects"
+    },
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Let's keep in touch!",
+        "form": {
+            "name": "Name",
+            "company": "Company",
+            "email": "Email",
+            "message": "Message",
+            "namePlaceholder": "Name",
+            "companyPlaceholder": "Company (optional)",
+            "emailPlaceholder": "Email",
+            "messagePlaceholder": "Message",
+            "submitButton": "Send",
+            "errors": {
+                "name": "Name is required.",
+                "email": "Email is required.",
+                "message": "Message is required."
+            }
+        },
+        "notifications": {
+            "success": "Thank you for your message!\nI'll get back to you soon 😊",
+            "error": "An error occurred while sending your message 😥\nI'm probably working on fixing it!"
+        },
+        "socialLinks": {
+            "email": "Email",
+            "github": "Github",
+            "linkedin": "Linkedin",
+            "dribble": "Dribble",
+            "codepen": "Codepen"
+        }
+    },
+    "notFound": {
+        "title": "404 - Page Not Found",
+        "linkText": "Return to main page",
+        "linkLabel": "Return to the main page"
+    }
+}

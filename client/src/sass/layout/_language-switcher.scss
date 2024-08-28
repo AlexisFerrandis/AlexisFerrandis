@@ -1,0 +1,27 @@
+.language-switcher {
+	position: fixed;
+	bottom: 2px;
+	left: 20px;
+	z-index: 1000;
+
+	button {
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		margin: 0;
+
+		img {
+			width: 32px;
+			height: auto;
+			transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+			filter: grayscale(0.9) brightness(100%) saturate(100%) hue-rotate(0deg); 
+
+			&:hover,
+            &:focus {
+				filter: grayscale(0.5); 
+				transform: scale(1.05);
+			}
+		}
+	}
+}
