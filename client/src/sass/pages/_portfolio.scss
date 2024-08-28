@@ -12,6 +12,7 @@
         font-size: $heading-1-font-size;
         font-weight: $heading-1-font-weight;
         color: $clr-white;
+        font-family: $font-family-accent;
     }
 
     h2 {
@@ -88,7 +89,9 @@
             margin-right: 0;
         }
 
-        &:hover .project-card {
+        &:hover .project-card,
+        &:focus .project-card
+         {
             transform: translateY(-5px);
             box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4);
         }

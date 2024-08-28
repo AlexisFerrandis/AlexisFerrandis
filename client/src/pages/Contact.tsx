@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import githubIco from "../assets/ico/github.svg";
 import linkedinIco from "../assets/ico/linkedin.svg";
@@ -7,7 +7,39 @@ import codepenIco from "../assets/ico/codepen.svg";
 import emailIco from "../assets/ico/envelope-solid.svg";
 import ParticlesCanvas from '../layouts/ParticlesCanvas';
 
+const Notification: React.FC<{ message: string, type: 'success' | 'error', onClose: () => void }> = ({ message, type, onClose }) => {
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            onClose();
+        }, 10000); // 10 seconds
+
+        return () => clearTimeout(timer);
+    }, [onClose]);
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            className={`notification ${type}`}
+            role="alert"
+            aria-live="assertive"
+        >
+            {message.split('\n').map((line, index) => (
+                <p key={index}>{line}</p>
+            ))}
+        </motion.div>
+    );
+};
+
 const Contact: React.FC = () => {
+    const apiUrl = import.meta.env.VITE_API_URL;
+    const [notification, setNotification] = useState<{ message: string, type: 'success' | 'error' } | null>(null);
+
+    const handleCloseNotification = () => {
+        setNotification(null);
+    };
+
     const [formData, setFormData] = useState({
         name: '',
         company: '',
@@ -30,7 +62,7 @@ const Contact: React.FC = () => {
         }
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         const newErrors = {
@@ -41,9 +73,52 @@ const Contact: React.FC = () => {
 
         setErrors(newErrors);
 
+        if (newErrors.name || newErrors.email || newErrors.message) {
+            const errorFields = document.querySelectorAll('.form-group.error');
+            errorFields.forEach((field) => {
+                const htmlField = field as HTMLElement;
+                htmlField.classList.remove('error');
+                void htmlField.offsetWidth;
+                htmlField.classList.add('error');
+            });
+        }
+
         if (!newErrors.name && !newErrors.email && !newErrors.message) {
-            console.log('Form Data:', formData);
-            // submit here
+            try {
+                const formDataEncoded = new URLSearchParams();
+                formDataEncoded.append("name", formData.name);
+                formDataEncoded.append("company", formData.company);
+                formDataEncoded.append("email", formData.email);
+                formDataEncoded.append("message", formData.message);
+
+                const response = await fetch(`${apiUrl}/send_mail.php`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: formDataEncoded.toString()
+                });
+
+                const result = await response.json();
+                if (result.status === "success") {
+                    setNotification({
+                        message: "Thank you for your message!\nI'll get back to you soon 😊",
+                        type: 'success'
+                    });
+                    setFormData({ name: '', company: '', email: '', message: '' });
+                } else {
+                    setNotification({
+                        message: "An error occurred while sending your message 😥\nI'm probably working on fixing it!",
+                        type: 'error'
+                    });
+                }
+            } catch (error) {
+                console.error('Erreur lors de l\'envoi du formulaire:', error);
+                setNotification({
+                    message: "An error occurred while sending your message 😥\nI'm probably working on fixing it!",
+                    type: 'error'
+                });
+            }
         }
     };
 
@@ -55,6 +130,15 @@ const Contact: React.FC = () => {
 
     return (
         <div className='contact-wrapper'>
+            <AnimatePresence>
+                {notification && (
+                    <Notification
+                        message={notification.message}
+                        type={notification.type}
+                        onClose={handleCloseNotification}
+                    />
+                )}
+            </AnimatePresence>
             <AnimatePresence>
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -80,7 +164,7 @@ const Contact: React.FC = () => {
                     {...baseAnimation(0.7, 0, 20)}
                 >
                     {[
-                        { href: "mailto:contact@alexisferrandis.com", img: emailIco, alt: "Email", delay: 0.8 },
+                        { href: "mailto:alexisferrandis@protonmail.com", img: emailIco, alt: "Email", delay: 0.8 },
                         { href: "https://github.com/AlexisFerrandis/", img: githubIco, alt: "Github", delay: 0.9 },
                         { href: "https://www.linkedin.com/in/alexis-ferrandis-5b5343106/", img: linkedinIco, alt: "Linkedin", delay: 1 },
                         { href: "https://dribbble.com/alexisBabajko", img: dribbleIco, alt: "Dribble", delay: 1.1 },
@@ -92,6 +176,7 @@ const Contact: React.FC = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             {...baseAnimation(link.delay, 0, 20, 0.2)}
+                            aria-label={`Visit ${link.alt}`}
                         >
                             <img src={link.img} alt={link.alt} />
                         </motion.a>
@@ -101,6 +186,7 @@ const Contact: React.FC = () => {
                     onSubmit={handleSubmit}
                     className="contact-form"
                     {...baseAnimation(0.2, 50)}
+                    aria-describedby="form-error"
                 >
                     {[
                         { id: "name", label: "Name", type: "text", placeholder: "Name", error: errors.name, delay: 0.3 },
@@ -112,6 +198,7 @@ const Contact: React.FC = () => {
                             key={index}
                             className={`form-group ${field.error ? 'error' : ''}`}
                             {...baseAnimation(field.delay, 0, 10, 0.3)}
+                            aria-live="polite"
                         >
                             <label htmlFor={field.id}>{field.label}</label>
                             {field.textarea ? (
@@ -121,6 +208,8 @@ const Contact: React.FC = () => {
                                     placeholder={field.placeholder}
                                     value={formData[field.id as keyof typeof formData]}
                                     onChange={handleChange}
+                                    aria-invalid={field.error}
+                                    aria-describedby={field.error ? `${field.id}-error` : undefined}
                                     required
                                 />
                             ) : (
@@ -131,8 +220,15 @@ const Contact: React.FC = () => {
                                     placeholder={field.placeholder}
                                     value={formData[field.id as keyof typeof formData]}
                                     onChange={handleChange}
+                                    aria-invalid={field.error}
+                                    aria-describedby={field.error ? `${field.id}-error` : undefined}
                                     required={field.id !== 'company'}
                                 />
+                            )}
+                            {field.error && (
+                                <span id={`${field.id}-error`} className="error-message">
+                                    {field.id.charAt(0).toUpperCase() + field.id.slice(1)} is required.
+                                </span>
                             )}
                         </motion.div>
                     ))}

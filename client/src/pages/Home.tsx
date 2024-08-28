@@ -33,7 +33,7 @@ const Home: React.FC = () => {
         { href: "https://github.com/AlexisFerrandis/", img: githubIco, alt: "Github" },
         { href: "https://www.linkedin.com/in/alexis-ferrandis-5b5343106/", img: linkedinIco, alt: "Linkedin" },
         { href: "https://dribbble.com/alexisBabajko", img: dribbleIco, alt: "Dribble" },
-        { href: "mailto:contact@alexisferrandis.com", img: emailIco, alt: "Email" }
+        { href: "mailto:alexisferrandis@protonmail.com", img: emailIco, alt: "Email" }
     ];
 
     return (
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
                         className="circle"
                         style={{ transform: `translate(${offset.x}px, ${offset.y}px)` }}
                     >
-                        <Link to="/portfolio">
+                        <Link to="/portfolio" aria-label="View Portfolio">
                             <div
                                 className="circle-text"
                                 style={{ transform: `translate(${offset.x * 2}px, ${offset.y * 2}px)` }}
@@ -74,7 +74,7 @@ const Home: React.FC = () => {
                 <ul>
                     {socialLinks.map((link, index) => (
                         <li key={index}>
-                            <a href={link.href} target="_blank" rel="noopener noreferrer">
+                            <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.alt}>
                                 <img src={link.img} alt={link.alt} />
                             </a>
                         </li>

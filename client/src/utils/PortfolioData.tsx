@@ -13,6 +13,9 @@ import litiniPreview from "../assets/preview/litini-min.webp"
 import ffwPreview from "../assets/preview/ffw-min.webp"
 import pokemonJs from "../assets/preview/pokemonJs-min.webp"
 import projectPreview from "../assets/preview/konsol-min.webp"
+import turtlePillowPreviw from "../assets/preview/turtlepillow-min.webp"
+import rpggPreview from "../assets/preview/rpg-g.webp"
+import twofourtyheightPreview from "../assets/preview/2048.webp"
 
 export const webProjects = [
     {
@@ -72,6 +75,13 @@ export const webProjects = [
         link: 'https://syrahgence.fr/'
     },
     {
+        title: 'RPG-G',
+        type: 'Application',
+        preview: rpggPreview,
+        technologies: ['React', 'TypeScript', 'PHP', 'MongoDB'],
+        link: 'https://rpg-g.com/'
+    },
+    {
         title: 'Elodie Pascal',
         type: 'Website',
         preview: elodiePreview,
@@ -86,6 +96,13 @@ export const webProjects = [
         link: 'https://github.com/AlexisFerrandis/Facedook'
     },
     {
+        title: 'Turtle Pillow',
+        type: 'ARG',
+        preview: turtlePillowPreviw,
+        technologies: ['HTML5', 'Vanilla JS', 'Gimp'],
+        link: 'https://turtle-pillow.alexisferrandis.com/'
+    },
+    {
         title: 'Wine-Label',
         type: 'Application',
         preview: winelabelPreview,
@@ -98,6 +115,13 @@ export const webProjects = [
         preview: konsolPreview,
         technologies: ['HTML5', 'Vanilla JS', 'Gimp'],
         link: 'https://konsol.alexisferrandis.com/'
+    },
+    {
+        title: 'Customisable 2048',
+        type: 'Video Game',
+        preview: twofourtyheightPreview,
+        technologies: ['HTML5', 'Vanilla JS'],
+        link: 'https://2048.alexisferrandis.com/'
     },
     {
         title: 'Portfolio v2',
@@ -137,6 +161,7 @@ export const techColors = {
     'Vanilla JS': 'hsl(210, 75%, 60%)',
     'React': 'hsl(204, 100%, 50%)',
     'Node.js': 'hsl(45, 75%, 60%)',
+    'PHP': 'hsl(45, 75%, 60%)',
     'MongoDB': 'hsl(145, 45%, 55%)',
     'Next.js': 'hsl(272, 100%, 80%)',
     'TypeScript': 'hsl(272, 100%, 80%)',

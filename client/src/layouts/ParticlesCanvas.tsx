@@ -11,7 +11,7 @@ const ParticlesCanvas: React.FC = () => {
         if (!canvas || !ctx) return;
 
         canvas.width = window.innerWidth / 1.4;
-        canvas.height = window.innerHeight;
+        canvas.height = window.innerHeight + 50;
 
         let particlesArray: Particle[] = [];
 

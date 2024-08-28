@@ -18,6 +18,7 @@
             font-size: $heading-1-font-size;
             font-weight: $heading-1-font-weight;
             color: $clr-white;
+            font-family: $font-family-accent;
         }
 
         h2 {
@@ -35,6 +36,10 @@
 
             a {
                 display: inline-block;
+                &:focus img {
+                    opacity: 1;
+                    filter: $filter-secondary drop-shadow(0px 7px 10px #ed8282);
+                }
 
                 img {
                     width: 28px;
@@ -125,13 +130,34 @@
                 transition: background-color 0.3s ease;
                 margin: auto;
 
-                &:hover {
+                &:hover,
+                &:focus {
                     background-color: darken($clr-secondary, 10%);
+                    transform: scale(1.1);
                 }
             }
         }
     }
-
+    .notification {
+        position: fixed;
+        top: 15dvh;
+        right: 40%;
+        max-width: 420px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-align: center;
+        font-family: $font-family-accent;
+        color: white;
+        z-index: 99;
+    }
+    
+    .notification.success {
+        background-color: $clr-success; 
+    }
+    
+    .notification.error {
+        background-color: $clr-error;
+    }
 }
 
 @keyframes shake {

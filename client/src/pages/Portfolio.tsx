@@ -26,11 +26,12 @@ const ProjectShowcase: React.FC<{ projects: typeof webProjects }> = ({ projects 
                     initial="hidden"
                     animate="visible"
                     custom={index}
+                    aria-label={`View project ${project.title}`}
                 >
                     <motion.div className="project-card">
                         <img src={project.preview} alt={`${project.title} preview`} className="project-preview" />
                         <h3 className="project-title">{project.title}</h3>
-                        <h5 className='project-type'>{project.type}</h5>
+                        <h5 className="project-type">{project.type}</h5>
                         <div className="project-technologies">
                             {project.technologies.map((tech, idx) => (
                                 <span
@@ -87,6 +88,10 @@ const Portfolio: React.FC = () => {
             onMouseLeave={onMouseLeave}
             onClick={() => handleTabClick(tab)}
             style={{ transform: `translateY(${-80}px)` }}
+            role="tab"
+            aria-selected={selectedTab === tab}
+            tabIndex={0}
+            onKeyPress={(e) => e.key === 'Enter' && handleTabClick(tab)}
         >
             <div
                 className="circle"
@@ -112,9 +117,11 @@ const Portfolio: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="portfolio-container"
+            role="tabpanel"
+            aria-labelledby={selectedTab === 'Web' ? 'web-tab' : 'iot-tab'}
         >
             <h1>Portfolio</h1>
-            <div className="tabs">
+            <div className="tabs" role="tablist" aria-label="Portfolio Categories">
                 {renderTab('Web', offset, (e) => handleMouseMove(e, setOffset), () => handleMouseLeave(setOffset))}
                 {renderTab('IoT', offset, (e) => handleMouseMove(e, setOffset), () => handleMouseLeave(setOffset))}
             </div>
@@ -128,6 +135,7 @@ const Portfolio: React.FC = () => {
                         animate="visible"
                         exit="exit"
                         variants={tabContentVariants}
+                        id="web-tab"
                     >
                         <h2>Web Projects</h2>
                         <ProjectShowcase projects={webProjects} />
@@ -140,6 +148,7 @@ const Portfolio: React.FC = () => {
                         animate="visible"
                         exit="exit"
                         variants={tabContentVariants}
+                        id="iot-tab"
                     >
                         <h2>IoT Projects</h2>
                         <ProjectShowcase projects={iotProjects} />
