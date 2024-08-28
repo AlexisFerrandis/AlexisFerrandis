@@ -13,9 +13,6 @@
     - 📫 How to reach me: <strong><a href="https://alexisferrandis.com/contact">Here 😇</a></strong><br>
     - ⚡ Fun fact: My love for tomatoes is so strong that I could start a tomato farm! 🍅
   </div>
-  <div style="flex: 1; margin: 0; padding: 0;">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=alexisferrandis&layout=compact&theme=radical" alt="Top Languages" style="margin: 0; padding: 0; vertical-align: middle;">
-  </div>
 </div>
 
 ---
