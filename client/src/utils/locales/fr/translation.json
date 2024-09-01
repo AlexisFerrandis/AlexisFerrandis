@@ -57,7 +57,7 @@
     },
     "contact": {
         "title": "Contact",
-        "subtitle": "Prenons contact !",
+        "subtitle": "",
         "form": {
             "name": "Nom",
             "company": "Entreprise",

@@ -9,20 +9,20 @@ const Footer: React.FC = () => {
     return (
         <nav className="footer" aria-label="Footer Navigation" role="navigation">
             <ul className="footer__links">
-                <span>&bull;</span>
                 <li className="footer__item">
+                    <span>&bull;</span>
                     <a href="/public/media/files/gtcs.pdf" target="_blank" rel="noopener noreferrer">
                         {t('footer.gtcs')}
                     </a>
                 </li>
-                <span>&bull;</span>
                 <li className="footer__item">
+                    <span>&bull;</span>
                     <a href="/public/media/files/cv.pdf" target="_blank" rel="noopener noreferrer">
                         {t('footer.cv')}
                     </a>
                 </li>
-                <span>&bull;</span>
                 <li className="footer__item cp">
+                    <span>&bull;</span>
                     <Link to="/">
                         {t('footer.copyright', { year: currentYear })}
                     </Link>
