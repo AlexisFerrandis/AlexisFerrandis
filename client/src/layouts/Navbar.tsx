@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import signature from "../assets/signature.svg";
 
 const Navbar: React.FC = () => {
-    const { t } = useTranslation(); // Intégration de useTranslation
+    const { t } = useTranslation();
     const location = useLocation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);

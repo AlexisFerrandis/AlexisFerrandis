@@ -13,7 +13,7 @@ const Notification: React.FC<{ message: string, type: 'success' | 'error', onClo
     useEffect(() => {
         const timer = setTimeout(() => {
             onClose();
-        }, 10000); // 10 seconds
+        }, 10000); // 10 sec
 
         return () => clearTimeout(timer);
     }, [onClose]);

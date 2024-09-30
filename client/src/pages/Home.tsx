@@ -10,7 +10,7 @@ import codepenIco from "../assets/ico/codepen.svg";
 import emailIco from "../assets/ico/envelope-solid.svg";
 
 const Home: React.FC = () => {
-    const { t } = useTranslation();  // Utilisation du hook useTranslation
+    const { t } = useTranslation();
 
     const [offset, setOffset] = useState({ x: 0, y: 0 });
 
