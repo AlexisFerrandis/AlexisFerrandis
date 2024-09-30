@@ -31,10 +31,10 @@ const Home: React.FC = () => {
     });
 
     const socialLinks = [
-        { href: "https://codepen.io/alexisferrandis", img: codepenIco, alt: t('home.social.codepen') },
         { href: "https://github.com/AlexisFerrandis/", img: githubIco, alt: t('home.social.github') },
         { href: "https://www.linkedin.com/in/alexis-ferrandis-5b5343106/", img: linkedinIco, alt: t('home.social.linkedin') },
         { href: "https://dribbble.com/alexisBabajko", img: dribbleIco, alt: t('home.social.dribble') },
+        { href: "https://codepen.io/alexisferrandis", img: codepenIco, alt: t('home.social.codepen') },
         { href: "mailto:alexisferrandis@protonmail.com", img: emailIco, alt: t('home.social.email') }
     ];
 

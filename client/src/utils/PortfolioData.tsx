@@ -1,4 +1,5 @@
 import facedookPreview from "../assets/preview/facedook-min.webp"
+import bithovenPreview from "../assets/preview/bithoven-min.webp"
 import konsolPreview from "../assets/preview/konsol-min.webp"
 import portfolio1Preview from "../assets/preview/portfoliov1-min.webp"
 import portfolio2Preview from "../assets/preview/portfoliov2-min.webp"
@@ -16,13 +17,21 @@ import projectPreview from "../assets/preview/konsol-min.webp"
 import turtlePillowPreviw from "../assets/preview/turtlepillow-min.webp"
 import rpggPreview from "../assets/preview/rpg-g.webp"
 import twofourtyheightPreview from "../assets/preview/2048.webp"
+import devtookitPreview from "../assets/preview/devtoolkit-min.webp"
 
 export const webProjects = [
+    {
+        title: 'WebDev Toolkit',
+        type: 'Application',
+        preview: devtookitPreview,
+        technologies: ['Next.js', 'TypeScript', 'Python', 'Tailwind',],
+        link: 'https://dev-toolkit-vert.vercel.app/'
+    },
     {
         title: 'Fight For Words',
         type: 'Application',
         preview: ffwPreview,
-        technologies: ['React', 'Node.js', 'MongoDB', 'Figma'],
+        technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB',],
         link: 'https://www.fightforwords.com/'
     },
     {
@@ -47,18 +56,18 @@ export const webProjects = [
         link: 'https://www.pokemonjs.alexisferrandis.com/'
     },
     {
-        title: 'Le Repaire de Bacchus',
-        type: 'Website',
-        preview: lrdbPreview,
-        technologies: ['React', 'Node.js', 'MongoDB', 'SCSS'],
-        link: 'https://www.lerepairedebacchus.com/'
-    },
-    {
         title: 'Litini',
         type: 'Website & Application',
         preview: litiniPreview,
         technologies: ['React', 'React Native', 'Beacon', 'BLE'],
         link: 'https://www.litini.alexisferrandis.com/'
+    },
+    {
+        title: 'Le Repaire de Bacchus',
+        type: 'Website',
+        preview: lrdbPreview,
+        technologies: ['React', 'Node.js', 'MongoDB', 'SCSS'],
+        link: 'https://www.lerepairedebacchus.com/'
     },
     {
         title: 'SRGame',
@@ -89,6 +98,13 @@ export const webProjects = [
         link: 'https://elodiepascal.com/'
     },
     {
+        title: 'Wine-Label',
+        type: 'Application',
+        preview: winelabelPreview,
+        technologies: ['TypeScript', 'QR Code', 'SCSS'],
+        link: 'https://wine-label.fr/'
+    },
+    {
         title: 'Facedook',
         type: 'Application',
         preview: facedookPreview,
@@ -103,13 +119,6 @@ export const webProjects = [
         link: 'https://turtle-pillow.alexisferrandis.com/'
     },
     {
-        title: 'Wine-Label',
-        type: 'Application',
-        preview: winelabelPreview,
-        technologies: ['TypeScript', 'QR Code', 'SCSS'],
-        link: 'https://wine-label.fr/'
-    },
-    {
         title: 'Konsol',
         type: 'Website',
         preview: konsolPreview,
@@ -122,6 +131,13 @@ export const webProjects = [
         preview: twofourtyheightPreview,
         technologies: ['HTML5', 'Vanilla JS'],
         link: 'https://2048.alexisferrandis.com/'
+    },
+    {
+        title: 'Wolfgang Bithoven',
+        type: 'Website',
+        preview: bithovenPreview,
+        technologies: ['Wordpress'],
+        link: 'https://wolfgangbithoven.wordpress.com/'
     },
     {
         title: 'Portfolio v2',
@@ -164,7 +180,7 @@ export const techColors = {
     'PHP': 'hsl(45, 75%, 60%)',
     'MongoDB': 'hsl(145, 45%, 55%)',
     'Next.js': 'hsl(272, 100%, 80%)',
-    'TypeScript': 'hsl(272, 100%, 80%)',
+    'TypeScript': 'hsl(0, 75%, 60%)',
     'SCSS': 'hsl(0, 75%, 60%)',
     'Figma': 'hsl(272, 100%, 80%)',
     'Gimp': 'hsl(272, 76%, 57%)',
@@ -173,6 +189,8 @@ export const techColors = {
     'Beacon': 'hsl(272, 76%, 57%)',
     'BLE': 'hsl(0, 75%, 60%)',
     'Tiled': 'hsl(145, 45%, 55%)',
+    'Wordpress': 'hsl(210, 75%, 60%)',
+    'Tailwind': 'hsl(210, 75%, 60%)',
 
 
     'Arduino': 'hsl(204, 100%, 50%)',

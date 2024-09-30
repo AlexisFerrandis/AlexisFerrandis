@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Alexis Ferrandis</h1>
-<h3 align="center">A passionate web developer and technology enthusiast</h3>
+<h3 align="center">I develop lots of little things</h3>
 
 ---
 
@@ -12,10 +12,10 @@
   <!-- Description Section -->
   <div style="flex: 1;">
     - 🔭 I’m currently working on <strong><a href="https://dev-toolkit-vert.vercel.app/">DevToolkit 🛠️</a></strong><br>
-    - ✍️ I’m currently learning : <strong>network infrastructure</strong> 🛜<br>
+    - ✍️ I’m currently learning <strong>network infrastructure</strong> 🛜<br>
     - 💬 Feel free to ask me about anything 😊<br>
-    - 📫 How to reach me: <strong><a href="https://alexisferrandis.com/contact">Here 😇</a></strong><br>
-    - ⚡ Fun fact: I like tomatoes, I love tomatoes 🍅
+    - 📫 How to reach me : <strong><a href="https://alexisferrandis.com/contact">Here 😇</a></strong><br>
+    - ⚡ Fun fact : I like tomatoes, I love tomatoes 🍅
   </div>
 </div>
 

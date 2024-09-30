@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 
-import backgroundPreview from '../assets/preview/portfolio.png';
+import backgroundPreview from '../assets/preview/portfolio.webp';
 
 const LazySpline = React.lazy(() => import('@splinetool/react-spline'));
 
