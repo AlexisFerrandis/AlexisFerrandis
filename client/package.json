@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "postbuild": "terser dist/assets/vendor-spline-C94MK2xz.js -o dist/assets/vendor-spline-C94MK2xz.js --compress --mangle && terser dist/assets/physics-OC_TZvlZ.js -o dist/assets/physics-OC_TZvlZ.js --compress --mangle",
     "lint": "eslint .",
     "preview": "vite preview"
   },

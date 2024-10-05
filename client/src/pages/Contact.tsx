@@ -95,7 +95,7 @@ const Contact: React.FC = () => {
                 formDataEncoded.append("email", formData.email);
                 formDataEncoded.append("message", formData.message);
 
-                const response = await fetch(`${apiUrl}/send_mail.php`, {
+                const response = await fetch(`${apiUrl}/mail/send-email`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
