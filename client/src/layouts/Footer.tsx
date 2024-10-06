@@ -11,13 +11,13 @@ const Footer: React.FC = () => {
             <ul className="footer__links">
                 <li className="footer__item">
                     <span>&bull;</span>
-                    <a href="/public/media/files/gtcs.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href="./media/files/gtcs.pdf" target="_blank" rel="noopener noreferrer">
                         {t('footer.gtcs')}
                     </a>
                 </li>
                 <li className="footer__item">
                     <span>&bull;</span>
-                    <a href="/public/media/files/cv.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href="./media/files/cv.pdf" target="_blank" rel="noopener noreferrer">
                         {t('footer.cv')}
                     </a>
                 </li>

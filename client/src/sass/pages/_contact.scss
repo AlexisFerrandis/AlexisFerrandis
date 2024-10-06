@@ -171,13 +171,19 @@
                     transform: scale(1.1);
                 }
             }
+            .submit-btn[disabled] {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
         }
     }
     .notification {
         position: fixed;
-        top: 15dvh;
-        right: 40%;
+        top: 12dvh;
+        right: 5%;
+        width: 25%;
         max-width: 420px;
+        min-width: 360px;
         padding: 10px 20px;
         border-radius: 5px;
         text-align: center;

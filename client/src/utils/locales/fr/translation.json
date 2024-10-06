@@ -68,6 +68,7 @@
             "emailPlaceholder": "Email",
             "messagePlaceholder": "Message",
             "submitButton": "Envoyer",
+            "submittingButton": "Chargement...",
             "errors": {
                 "name": "Le nom est requis.",
                 "email": "L'email est requis.",

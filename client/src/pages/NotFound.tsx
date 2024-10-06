@@ -10,7 +10,7 @@ const NotFound: React.FC = () => {
             <h1>{t('notFound.title')}</h1>
             <h3>
                 <Link to="/" aria-label={t('notFound.linkLabel')}>
-                    {t('notFound.linkText')} <span>{t('notFound.linkText')}</span>
+                    <span>{t('notFound.linkText')}</span>
                 </Link>
             </h3>
         </div>

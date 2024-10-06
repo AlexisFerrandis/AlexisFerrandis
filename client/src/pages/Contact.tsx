@@ -36,6 +36,7 @@ const Notification: React.FC<{ message: string, type: 'success' | 'error', onClo
 
 const Contact: React.FC = () => {
     const { t } = useTranslation();
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const apiUrl = import.meta.env.VITE_API_URL;
     const [notification, setNotification] = useState<{ message: string, type: 'success' | 'error' } | null>(null);
@@ -88,6 +89,7 @@ const Contact: React.FC = () => {
         }
 
         if (!newErrors.name && !newErrors.email && !newErrors.message) {
+            setIsSubmitting(true);
             try {
                 const formDataEncoded = new URLSearchParams();
                 formDataEncoded.append("name", formData.name);
@@ -122,6 +124,8 @@ const Contact: React.FC = () => {
                     message: t('contact.notifications.error'),
                     type: 'error'
                 });
+            } finally {
+                setIsSubmitting(false);
             }
         }
     };
@@ -241,8 +245,9 @@ const Contact: React.FC = () => {
                         className="submit-btn"
                         {...baseAnimation(0.7, 0, 10, 0.4)}
                         whileTap={{ scale: 0.98 }}
+                        disabled={isSubmitting}
                     >
-                        {t('contact.form.submitButton')}
+                        {isSubmitting ? t('contact.form.submittingButton') : t('contact.form.submitButton')}
                     </motion.button>
                 </motion.form>
             </motion.div>
